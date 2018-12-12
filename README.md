@@ -42,3 +42,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## See the site
+[Crypto-Tracker](https://dan-kiss-dev-this.github.io/crypto-tracker/index.html)
+
+##Env note on create-react-app
+You need to make the key name start with 'REACT_APP_' in the project root directory so REACT_APP_SECRET_KEY = 123456  
+console.log(process.env) to see your keys
