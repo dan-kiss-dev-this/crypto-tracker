@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TestComponent2 from './ChartComponent';
+import ApiComponent from './ApiComponent';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
         </header>
         <div>
           <TestComponent2 name='steve'/>
+          <ApiComponent />
         </div>
       </div>
     );
