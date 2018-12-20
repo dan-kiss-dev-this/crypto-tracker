@@ -24,7 +24,7 @@ class App extends Component {
           </a>
         </header>
         <div>
-          <ApiComponent />
+          <ApiComponent site='https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=30'/>
         </div>
       </div>
     );

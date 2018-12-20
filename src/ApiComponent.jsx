@@ -3,12 +3,13 @@ import CandleStickChart from './ChartComponent';
 import { TypeChooser } from "react-stockcharts/lib/helper";
 
 class ApiComponent extends React.Component {
+
     state = {
         apiData: {}
     }
 
     async fetchData() {
-        let response = await fetch('https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=30');
+        let response = await fetch(this.props.site);
         try {
             if (response.ok) {
                 let apiData = await response.json()
