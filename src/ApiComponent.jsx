@@ -30,29 +30,29 @@ class ApiComponent extends React.Component {
     }
 
     render() {
-        console.log(37,this.state);
+        console.log(37, this.state);
         return (
             this.state.apiData.Data !== undefined ?
-            <div className="Chart-main">
-                <h1>Crypto Chart</h1>
-                <TypeChooser > 
-                    { type => <CandleStickChart type={type} data={this.state.apiData.Data} />} 
-                </TypeChooser>
-            </div>
-           :
-           <div className="App">
-           <header className="App-header">
-             <img src={logo} className="App-logo" alt="logo" />
-             <a
-               className="App-link"
-               href="https://reactjs.org"
-               target="_blank"
-               rel="noopener noreferrer"
-             >
-               Loading...
-             </a>
-           </header>
-         </div>
+                <div className="Chart-main">
+                    <h1>Crypto Chart</h1>
+                    <TypeChooser >
+                        {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
+                    </TypeChooser>
+                </div>
+                :
+                <div className="App">
+                    <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo" />
+                        <a
+                            className="App-link"
+                            href="https://reactjs.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Loading...
+                        </a>
+                    </header>
+                </div>
         );
     }
 }

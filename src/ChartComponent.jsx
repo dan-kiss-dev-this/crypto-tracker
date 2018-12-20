@@ -1,27 +1,3 @@
-// import React from 'react';
-// import { scaleTime } from "d3-scale";
-// import { utcDay } from "d3-time";
-
-// import { ChartCanvas, Chart } from "react-stockcharts";
-// import { CandlestickSeries } from "react-stockcharts/lib/series";
-// import { XAxis, YAxis } from "react-stockcharts/lib/axes";
-// import { fitWidth } from "react-stockcharts/lib/helper";
-// import { last, timeIntervalBarWidth } from "react-stockcharts/lib/utils";
-
-// const testComponent = ({data}) => (
-    
-//     <div>
-//         {const j = 10;}
-//         <p>sup</p>
-//         {data.map(value =>
-//             <div>{value.close}</div>)
-        
-//     }
-//     </div>
-// );
-
-// export default testComponent;
-
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -38,7 +14,6 @@ class CandleStickChart extends React.Component {
     render() {
         const { type, width, data, ratio } = this.props;
         const xAccessor = d => new Date(d.time*1000);
-        //function xAccessor (d) { if (typeof d === "object") return new Date(d.time*1000); }
         const xExtents = [
             xAccessor(last(data)),
             xAccessor(data[data.length - 30])
