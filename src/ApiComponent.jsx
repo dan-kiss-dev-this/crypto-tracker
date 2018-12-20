@@ -1,6 +1,8 @@
 import React from 'react';
 import CandleStickChart from './ChartComponent';
 import { TypeChooser } from "react-stockcharts/lib/helper";
+import logo from './logo.svg';
+import './App.css';
 
 class ApiComponent extends React.Component {
 
@@ -31,11 +33,26 @@ class ApiComponent extends React.Component {
         console.log(37,this.state);
         return (
             this.state.apiData.Data !== undefined ?
-            <TypeChooser> 
-                { type => <CandleStickChart type={type} data={this.state.apiData.Data} />} 
-            </TypeChooser>
+            <div className="Chart-main">
+                <h1>Crypto Chart</h1>
+                <TypeChooser > 
+                    { type => <CandleStickChart type={type} data={this.state.apiData.Data} />} 
+                </TypeChooser>
+            </div>
            :
-            <div>Loading... </div>
+           <div className="App">
+           <header className="App-header">
+             <img src={logo} className="App-logo" alt="logo" />
+             <a
+               className="App-link"
+               href="https://reactjs.org"
+               target="_blank"
+               rel="noopener noreferrer"
+             >
+               Loading...
+             </a>
+           </header>
+         </div>
         );
     }
 }
