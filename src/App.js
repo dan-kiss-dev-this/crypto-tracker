@@ -25,18 +25,17 @@ const store = createStore(todoReducer);
 
 class App extends Component {
   render() {
-    let userSelection = 'BTC';
-    console.log(29,this.props.userSelection);
-    if (this.props.userSelection) {
-      userSelection = this.props;
-    }
+    // let userSelection = 'BTC';
+    // console.log(29,this.props.userSelection);
+    // if (this.props.userSelection) {
+    //   userSelection = this.props;
+    // }
 
-    const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${userSelection}&tsym=USD&limit=30`;
+    // const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${userSelection}&tsym=USD&limit=30`;
     return (
       <Provider store={store}>
-        {console.log(31,store)}
         <div className="App">
-            <ApiComponent site={site}/>
+            <ApiComponent />
         </div>
       </Provider>
     );

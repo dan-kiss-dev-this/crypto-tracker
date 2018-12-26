@@ -58,7 +58,15 @@ class ApiComponent extends React.Component {
     };
 
     async fetchData() {
-        let response = await fetch(this.props.site);
+        // let userSelection = 'BTC';
+        // console.log(62,this.props);
+        // console.log(63,this.state);
+        // if (this.props.userSelection) {
+        // userSelection = this.props.userSelection;
+        // }
+        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${this.state.userSelection}&tsym=USD&limit=30`;
+        console.log(68,site);
+        let response = await fetch(site);
         try {
             if (response.ok) {
                 let apiData = await response.json()
@@ -72,16 +80,16 @@ class ApiComponent extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.fetchData();
-    }
+    // componentDidMount() {
+    //     this.fetchData();
+    // }
 
     render() {
-        console.log(37, this.state);
+        this.fetchData();
+        console.log(86, this.state);
         return (
             this.state.apiData.Data !== undefined ?
                 <div className="Chart-main">
-                    <h2>Insert todo</h2>
                     {/* <input 
                         type="text"
                         name="todo"
@@ -89,6 +97,7 @@ class ApiComponent extends React.Component {
                             return this.handleChange(e);
                         }}
                     /> */}
+                    <h1>{this.props.todos && this.props.todos} Crypto Chart</h1>
                     <select onChange={e => {
                         this.handleChange(e);
                         
@@ -97,37 +106,6 @@ class ApiComponent extends React.Component {
                         <option value='ETH'>Ethereum</option>
                         <option value='XRP'>Ripple</option>
                     </select>
-                    <button
-                        // onClick={() => {
-                            //we define and call the dispatch method here as this is where
-                            //out event is triggered. We pass in the action, which in turn is passed
-                            //in the user input(this is how our data is passed into the store)
-                            // return this.props.dispatch(add_todo(this.state.userInput));
-                        // }}
-                    >
-                        Add 
-                    </button>
-                    {console.log(104,this.props)}
-                    <ul>
-                        {this.props.todos && <p>{this.props.todos}</p>
-                            // this.props.todos.map(todo => {
-                            //     return (
-                            //         <li
-                            //             onClick={() => {
-                            //                 //We have another dispatch here for our section action
-                            //                 //this time passing in the index of the todo in the state
-                            //                 let todoIndex = this.props.todos.findIndex(k => k === todo);
-                            //                 return this.props.dispatch(remove_todo(todoIndex));
-                            //             }}
-                            //         >
-                            //             {todo}
-                            //         </li>
-                            //     );
-                            // })
-                        }
-                    </ul>
-
-                    <h1>Crypto Chart</h1>
                     <TypeChooser >
                         {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
                     </TypeChooser>

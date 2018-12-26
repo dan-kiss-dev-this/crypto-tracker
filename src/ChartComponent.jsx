@@ -18,7 +18,7 @@ class CandleStickChart extends React.Component {
             xAccessor(last(data)),
             xAccessor(data[data.length - 30])
         ];
-        console.log(46,this.props, xExtents);
+        console.log(21,' chart components ',this.props);
 		return (
             xExtents.length <= 1 ? <p>User Reload Page</p> :
 			<ChartCanvas height={400}
