@@ -43,20 +43,18 @@ class ApiComponent extends React.Component {
         super(props);
 
         this.state = {
-            userInput: '',
-            apiData: {}
+            // userInput: '',
+            apiData: {},
+            userSelection: 'BTC'
         }
 
     }
 
-    // state = {
-    //     apiData: {}
-    // }
-
-    handleChange = e => {
-        this.setState({
-            userInput: e.target.value
+    async handleChange (e) {
+        await this.setState({
+            userSelection: e.target.value
         });
+        await this.props.dispatch(add_todo(this.state.userSelection));
     };
 
     async fetchData() {
@@ -84,39 +82,48 @@ class ApiComponent extends React.Component {
             this.state.apiData.Data !== undefined ?
                 <div className="Chart-main">
                     <h2>Insert todo</h2>
-                    <input 
+                    {/* <input 
                         type="text"
                         name="todo"
                         onChange={e => {
                             return this.handleChange(e);
                         }}
-                    />
+                    /> */}
+                    <select onChange={e => {
+                        this.handleChange(e);
+                        
+                    }}>
+                        <option value='BTC'>Bitcoin</option>
+                        <option value='ETH'>Ethereum</option>
+                        <option value='XRP'>Ripple</option>
+                    </select>
                     <button
-                        onClick={() => {
+                        // onClick={() => {
                             //we define and call the dispatch method here as this is where
                             //out event is triggered. We pass in the action, which in turn is passed
                             //in the user input(this is how our data is passed into the store)
-                            return this.props.dispatch(add_todo(this.state.userInput));
-                        }}
+                            // return this.props.dispatch(add_todo(this.state.userInput));
+                        // }}
                     >
                         Add 
                     </button>
+                    {console.log(104,this.props)}
                     <ul>
-                        {this.props.todos && 
-                            this.props.todos.map(todo => {
-                                return (
-                                    <li
-                                        onClick={() => {
-                                            //We have another dispatch here for our section action
-                                            //this time passing in the index of the todo in the state
-                                            let todoIndex = this.props.todos.findIndex(k => k === todo);
-                                            return this.props.dispatch(remove_todo(todoIndex));
-                                        }}
-                                    >
-                                        {todo}
-                                    </li>
-                                );
-                            })
+                        {this.props.todos && <p>{this.props.todos}</p>
+                            // this.props.todos.map(todo => {
+                            //     return (
+                            //         <li
+                            //             onClick={() => {
+                            //                 //We have another dispatch here for our section action
+                            //                 //this time passing in the index of the todo in the state
+                            //                 let todoIndex = this.props.todos.findIndex(k => k === todo);
+                            //                 return this.props.dispatch(remove_todo(todoIndex));
+                            //             }}
+                            //         >
+                            //             {todo}
+                            //         </li>
+                            //     );
+                            // })
                         }
                     </ul>
 
