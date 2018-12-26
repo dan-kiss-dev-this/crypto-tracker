@@ -4,26 +4,25 @@ import { TypeChooser } from "react-stockcharts/lib/helper";
 import logo from './logo.svg';
 import './App.css';
 
-import { connect } from 'react-redux';//we import the connect method from react-redux
+import { connect } from 'react-redux'; //we import the connect method from react-redux
 
 //It's useful, but not necessary, to define your action types as variables and reference them when you define your actions
 //maybe do this in a seperate file and import, you can then reference them here and also in your reducer
-const ADD_TODO = "ADD_TODO";
-const REMOVE_TODO = "REMOVE_TODO";
+const CHANGE_COIN = "CHANGE_COIN";
 
-const add_todo = todo => {
+const change_coin = todo => {
     return {
-        type: ADD_TODO,
+        type: CHANGE_COIN,
         value: todo
     };
 };
 
-const remove_todo = indexOfTodo => {
-    return {
-        type: REMOVE_TODO,
-        value: indexOfTodo
-    };
-};
+// const remove_todo = indexOfTodo => {
+//     return {
+//         type: REMOVE_TODO,
+//         value: indexOfTodo
+//     };
+// };
 
 //we define the mapStateToProps function where we will pass in to the connect method further down
 //We assign the entire state here to the todos property as we only contain the list of todos in the state
@@ -43,7 +42,6 @@ class ApiComponent extends React.Component {
         super(props);
 
         this.state = {
-            // userInput: '',
             apiData: {},
             userSelection: 'BTC'
         }
@@ -54,16 +52,10 @@ class ApiComponent extends React.Component {
         await this.setState({
             userSelection: e.target.value
         });
-        await this.props.dispatch(add_todo(this.state.userSelection));
+        await this.props.dispatch(change_coin(this.state.userSelection));
     };
 
     async fetchData() {
-        // let userSelection = 'BTC';
-        // console.log(62,this.props);
-        // console.log(63,this.state);
-        // if (this.props.userSelection) {
-        // userSelection = this.props.userSelection;
-        // }
         const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${this.state.userSelection}&tsym=USD&limit=30`;
         console.log(68,site);
         let response = await fetch(site);
@@ -80,10 +72,6 @@ class ApiComponent extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.fetchData();
-    // }
-
     render() {
         this.fetchData();
         console.log(86, this.state);
@@ -97,10 +85,9 @@ class ApiComponent extends React.Component {
                             return this.handleChange(e);
                         }}
                     /> */}
-                    <h1>{this.props.todos && this.props.todos} Crypto Chart</h1>
+                    <h1>{this.state.userSelection} Crypto Chart</h1>
                     <select onChange={e => {
-                        this.handleChange(e);
-                        
+                        this.handleChange(e); 
                     }}>
                         <option value='BTC'>Bitcoin</option>
                         <option value='ETH'>Ethereum</option>
