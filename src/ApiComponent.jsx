@@ -53,7 +53,12 @@ class ApiComponent extends React.Component {
             userSelection: e.target.value
         });
         await this.props.dispatch(change_coin(this.state.userSelection));
+        await this.fetchData();
     };
+
+    componentDidMount() {
+        this.fetchData();
+    }
 
     async fetchData() {
         const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${this.state.userSelection}&tsym=USD&limit=30`;
@@ -73,7 +78,7 @@ class ApiComponent extends React.Component {
     }
 
     render() {
-        this.fetchData();
+        
         console.log(86, this.state);
         return (
             this.state.apiData.Data !== undefined ?
