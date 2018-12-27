@@ -3,6 +3,7 @@ import CandleStickChart from './ChartComponent';
 import { TypeChooser } from "react-stockcharts/lib/helper";
 import logo from './logo.svg';
 import './App.css';
+import Skeleton from 'react-loading-skeleton';
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
@@ -103,17 +104,19 @@ class ApiComponent extends React.Component {
                 </div>
                 :
                 <div className="App">
-                    <header className="App-header">
+                    <h1><Skeleton count={1} height={70}/></h1>
+                    <div className="App-header">
                         <img src={logo} className="App-logo" alt="logo" />
                         <a
                             className="App-link"
-                            href="https://reactjs.org"
+                            href="https://github.com/dan-kiss-dev-this/crypto-tracker"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             Loading...
                         </a>
-                    </header>
+                    </div>
+                    
                 </div>
         );
     }

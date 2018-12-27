@@ -1,3 +1,7 @@
+html {
+  background-color: rgba(0, 235, 252, 0.842);
+}
+
 .App {
   text-align: center;
 }
@@ -11,7 +15,6 @@
 }
 
 .App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
   height: 20vmin;
 }
 
@@ -24,6 +27,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 20px;
+  border-radius: 5px
 }
 
 .App-link {
@@ -41,4 +46,12 @@
 
 select {
   font-size: 16px;
+}
+
+.Chart-main {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  margin: 35px;
 }
