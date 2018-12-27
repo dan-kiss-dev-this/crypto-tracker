@@ -78,8 +78,7 @@ class ApiComponent extends React.Component {
     }
 
     render() {
-        
-        console.log(86, this.state);
+        console.log(82,'top', this.state);
         return (
             this.state.apiData.Data !== undefined ?
                 <div className="Chart-main">
@@ -91,7 +90,7 @@ class ApiComponent extends React.Component {
                         }}
                     /> */}
                     <h1>{this.state.userSelection} Crypto Chart</h1>
-                    <select onChange={e => {
+                    <span>Select Coin </span><select onChange={e => {
                         this.handleChange(e); 
                     }}>
                         <option value='BTC'>Bitcoin</option>
