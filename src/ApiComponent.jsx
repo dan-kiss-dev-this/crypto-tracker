@@ -48,7 +48,6 @@ class ApiComponent extends React.Component {
             coinSelected: this.props.fullData.coin,
             newsData: {},
         }
-        console.log(60,props);
     }
 
     async handleChange (e) {
@@ -60,9 +59,26 @@ class ApiComponent extends React.Component {
     };
 
     async componentDidMount() {
-        console.log(72,'mount');
         await this.fetchNews();
         this.fetchData();
+    }
+
+    async fetchData() {
+        const coin = this.state.coinSelected;
+        // console.log(98,coin, this.props.fullData.coin);
+        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30`;
+        let response = await fetch(site);
+        try {
+            if (response.ok) {
+                let apiData = await response.json()
+                this.setState({
+                    apiData,
+                });
+            }
+        } catch (error) {
+            alert('Error occured reload page');
+            console.error(error);
+        }
     }
 
     async fetchNews() {
@@ -82,29 +98,8 @@ class ApiComponent extends React.Component {
         }
     }
 
-
-    async fetchData() {
-        console.log(94,this.props);
-        const coin = this.props.fullData.coin
-        console.log(98,coin, this.props.fullData.coin);
-        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30`;
-        console.log(68,site);
-        let response = await fetch(site);
-        try {
-            if (response.ok) {
-                let apiData = await response.json()
-                this.setState({
-                    apiData,
-                });
-            }
-        } catch (error) {
-            alert('Error occured reload page');
-            console.error(error);
-        }
-    }
-
     render() {
-        console.log(100,'state', this.state,' props', this.props);
+        console.log('state', this.state,' props', this.props);
         return (
             this.state.apiData.Data !== undefined ?
                 <div>
