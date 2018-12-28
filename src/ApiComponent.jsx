@@ -9,7 +9,6 @@ import NewsComponent from './NewsComponent';
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
 //It's useful, but not necessary, to define your action types as variables and reference them when you define your actions
-//maybe do this in a seperate file and import, you can then reference them here and also in your reducer
 const CHANGE_COIN = "CHANGE_COIN";
 const GET_NEWS = "GET_NEWS";
 
@@ -28,14 +27,14 @@ const get_news = news => {
 }
 
 //we define the mapStateToProps function where we will pass in to the connect method further down
-//We assign the entire state here to the todos property as we only contain the list of todos in the state
+//We assign the entire state here to the fullData property 
 const mapStateToProps = state => {
     return {
         fullData: state
     };
 };
 
-//we aren't using mapDispatchToProps as we don't need it in this simple example
+//we aren't using mapDispatchToProps as we don't need it in this basic example
 //const mapDispatchToProps = state => {
 //    return{}; 
 //};
@@ -65,7 +64,6 @@ class ApiComponent extends React.Component {
 
     async fetchData() {
         const coin = this.state.coinSelected;
-        // console.log(98,coin, this.props.fullData.coin);
         const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30`;
         let response = await fetch(site);
         try {
@@ -136,7 +134,6 @@ class ApiComponent extends React.Component {
                             Loading...
                         </a>
                     </div>
-                    
                 </div>
         );
     }
