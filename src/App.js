@@ -8,17 +8,15 @@ import './App.css';
 const coinReducer = (state = {coin: 'BTC', news: null}, action) => {
   switch (action.type) {
     case "CHANGE_COIN":
-      // let newState = [...state, action.value];
-      let newCoin = action.value;
-      state.coin = newCoin;
-      return state;
-    // case "GET_NEWS":
-    //   let news = action.value
+    let newCoin = action.value;
+    state.coin = newCoin;
+    return state;
     case "GET_NEWS":
-      let news = action.value
-      state.news = news.articles
-      return state;
+    let news = action.value
+    state.news = news.articles
+    return state;
     default:
+    // if you wanted to destructure state into an array = [...state];
       return state;
   }
 }

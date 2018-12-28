@@ -27,13 +27,6 @@ const get_news = news => {
     }
 }
 
-// const remove_todo = indexOfTodo => {
-//     return {
-//         type: REMOVE_TODO,
-//         value: indexOfTodo
-//     };
-// };
-
 //we define the mapStateToProps function where we will pass in to the connect method further down
 //We assign the entire state here to the todos property as we only contain the list of todos in the state
 const mapStateToProps = state => {
@@ -50,11 +43,9 @@ const mapStateToProps = state => {
 class ApiComponent extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(53,this)
         this.state = {
             apiData: {},
             coinSelected: this.props.fullData.coin,
-            // coinSelected: 'BTC',
             newsData: {},
         }
         console.log(60,props);
@@ -115,24 +106,20 @@ class ApiComponent extends React.Component {
     render() {
         console.log(100,'state', this.state,' props', this.props);
         return (
-            // this.state.apiData.Data !== undefined ?
             this.state.apiData.Data !== undefined ?
                 <div>
                     <div className="Chart-main">
-                        {/* <input 
-                            type="text"
-                            name="todo"
-                            onChange={e => {
-                                return this.handleChange(e);
-                            }}
-                        /> */}
                         <h1>Dan's Crypto Chart and News</h1>
-                        <span>Select Coin </span><select autofocus onChange={e => {
+                        <span>Select Coin </span><select autoFocus onChange={e => {
                             this.handleChange(e); 
                         }}>
                             <option value='BTC'>Bitcoin</option>
                             <option value='ETH'>Ethereum</option>
                             <option value='XRP'>Ripple</option>
+                            <option value='LTC'>Litecoin</option>
+                            <option value='USDT'>Tether</option>
+                            <option value='XLM'>Stellar</option>
+                            <option value='XMR'>Monero</option>
                         </select>
                         <TypeChooser >
                             {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
@@ -164,6 +151,4 @@ export default connect(
     mapStateToProps,
     null
 )(ApiComponent)
-
-//export default ApiComponent;
 
