@@ -53,5 +53,28 @@ select {
   border-radius: 5px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
-  margin: 35px;
+  margin: 20px;
 }
+
+.Article {
+  background-color: rgb(219, 227, 230);
+  border-radius: 5px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  margin: 20px;
+}
+
+.Article img {
+  width: 100%;
+  height: auto;
+}
+
+.Article a {
+  text-decoration: none;
+}
+
+.Article-Text {
+  background-color: azure;
+  color: black;
+}
+

@@ -126,8 +126,8 @@ class ApiComponent extends React.Component {
                                 return this.handleChange(e);
                             }}
                         /> */}
-                        <h1>{this.state.coinSelected} Crypto Chart</h1>
-                        <span>Select Coin </span><select onChange={e => {
+                        <h1>Dan's Crypto Chart and News</h1>
+                        <span>Select Coin </span><select autofocus onChange={e => {
                             this.handleChange(e); 
                         }}>
                             <option value='BTC'>Bitcoin</option>
