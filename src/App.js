@@ -5,12 +5,19 @@ import {createStore } from 'redux';
 import './App.css';
 
 //We define the reducer here so that we can pass it in when we create the store
-const coinReducer = (state = 'BTC', action) => {
+const coinReducer = (state = {coin: 'BTC', news: null}, action) => {
   switch (action.type) {
     case "CHANGE_COIN":
       // let newState = [...state, action.value];
-      let newState = action.value
-      return newState;
+      let newCoin = action.value;
+      state.coin = newCoin;
+      return state;
+    // case "GET_NEWS":
+    //   let news = action.value
+    case "GET_NEWS":
+      let news = action.value
+      state.news = news.articles
+      return state;
     default:
       return state;
   }
