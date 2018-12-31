@@ -1,8 +1,8 @@
 import React from 'react';
 import CandleStickChart from './ChartComponent';
 import { TypeChooser } from "react-stockcharts/lib/helper";
-import logo from './logo.svg';
-import './App.css';
+import logo from '../images/logo.svg';
+import '../css/App.css';
 import Skeleton from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
 

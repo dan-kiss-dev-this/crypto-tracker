@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ApiComponent from './ApiComponent';
 import { Provider } from 'react-redux';
 import {createStore } from 'redux';
-import './App.css';
+import '../css/App.css';
 
 //We define the reducer here so that we can pass it in when we create the store
 const coinReducer = (state = {coin: 'BTC', news: null}, action) => {

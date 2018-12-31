@@ -39,7 +39,7 @@ html {
 .navBar {
   background-color: rgb(255, 255, 255);
   border-style: solid;
-  background-image: url('./dark_pattern.jpg');
+  background-image: url('../images/dark_pattern.jpg');
 }
 
 .navBar h1{
