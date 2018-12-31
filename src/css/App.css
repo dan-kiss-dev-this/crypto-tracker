@@ -84,15 +84,16 @@ html {
 
 .Article {
   background-color: azure;
-  border-radius: 5px;
-  border-color: rgb(0, 0, 0);
+  border-radius: 3px;
+  border-color: azure rgb(0, 0, 0);
   border-style: solid;
   margin: 10px;
   width: 80%;
   height: auto;
   display: inline-block;
   vertical-align: top;
-  text-align: center; 
+  text-align: center;
+  border-width: thin;
 }
 
 .Article img {
@@ -105,7 +106,7 @@ html {
 }
 
 .Article a h4 {
-  background-color: rgb(193, 239, 250);
+  background-color: azure;
   padding: 10px;
   margin: 0px;
 }
