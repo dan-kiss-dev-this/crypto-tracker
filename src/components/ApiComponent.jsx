@@ -89,7 +89,7 @@ class ApiComponent extends React.Component {
     }
 
     async fetchNews() {
-        const site = 'https://newsapi.org/v2/top-headlines?sources=crypto-coins-news&apiKey=be6a84f3238641c2b3eb13361beffc88';
+        const site = 'https://newsapi.org/v2/everything?sources=crypto-coins-news&apiKey=be6a84f3238641c2b3eb13361beffc88';
         let response = await fetch(site)
         try {
             if (response.ok) {
