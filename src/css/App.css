@@ -2,6 +2,21 @@ html {
   background-color: rgba(67, 68, 68);
 }
 
+.Chart-main {
+  background-color: azure;
+  border-radius: 5px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  margin: 20px;
+}
+
+.Chart-main h4{
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 10px;
+
+}
+
 .Chart-main div label{
   visibility: hidden;
 }
@@ -45,9 +60,7 @@ html {
 }
 
 .navBar div {
-  /* background-color: #61dafb; */
   display: inline-block;
-  /* padding: 0px 20px; */
   border-color: rgb(0, 0, 0);
   border-style: solid;
   background-color: #61dafb;
@@ -57,8 +70,6 @@ html {
 .navBar div a {
   background-color: #61dafb;
   padding: 10px;
-  /* margin: 20px; */
-  /* color:red; */
   text-decoration: none;
 }
 
@@ -66,16 +77,7 @@ html {
   padding: 10px;
   text-decoration: none;
   background-color: azure;
-  /* margin: 20px; */
   color: rgb(68, 0, 255);
-}
-
-.Chart-main {
-  background-color: azure;
-  border-radius: 5px;
-  border-color: rgb(0, 0, 0);
-  border-style: solid;
-  margin: 20px;
 }
 
 .Articles {
