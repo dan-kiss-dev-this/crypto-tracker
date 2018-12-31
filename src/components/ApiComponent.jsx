@@ -73,7 +73,7 @@ class ApiComponent extends React.Component {
 
     async fetchData() {
         const coin = this.state.coinSelected;
-        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30`;
+        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30&api_key={42fe264b1c5770a241062077c69f096b9548e03d7b37b634e9fc2c736d33ec98}`;
         let response = await fetch(site);
         try {
             if (response.ok) {
