@@ -20,7 +20,7 @@ class CandleStickChart extends React.Component {
         ];
 		return (
             xExtents.length <= 1 ? <p>User Reload Page</p> :
-			<ChartCanvas height={400}
+			<ChartCanvas height={300}
 			    ratio={ratio}
 					 width={width}
 					 margin={{ left: 50, right: 50, top: 10, bottom: 30 }}
