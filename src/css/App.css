@@ -32,28 +32,41 @@ html {
 }
 
 .navBar {
-  background-color: rgb(255, 255, 255);
   border-style: solid;
   background-image: url('../images/dark_pattern.jpg');
+  text-align: right;
 }
 
 .navBar h1{
-  background-color: rgb(255, 255, 255);
-  background-color: #61dafb;
-  border-style: solid;
+  background-color: transparent;
+  padding: 10px 20px;
+  color:white;
+  text-align: center;
 }
 
 .navBar div {
-  background-color: #61dafb;
+  /* background-color: #61dafb; */
   display: inline-block;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   border-color: rgb(0, 0, 0);
   border-style: solid;
+  background-color: #61dafb;
+  width: 100%;
 }
 
 .navBar div a {
+  background-color: #61dafb;
   padding: 10px;
-  color:black;
+  /* margin: 20px; */
+  /* color:red; */
+  text-decoration: none;
+}
+
+.navBar div a:hover {
+  padding: 10px;
+  text-decoration: none;
+  background-color: azure;
+  /* margin: 20px; */
 }
 
 .Chart-main {
