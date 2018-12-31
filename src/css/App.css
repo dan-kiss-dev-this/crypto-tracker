@@ -1,5 +1,5 @@
 html {
-  background-color: rgba(16, 17, 17, 0.842);
+  background-color: rgba(67, 68, 68);
 }
 
 .Chart-main div label{
@@ -101,8 +101,13 @@ html {
 }
 
 @media screen and (min-width: 500px) {
+  body {
+    background-color: rgb(16, 17, 17, 0.842);
+  }
+  
   .Article {
     width: 40%;
   }
 }
+
 
