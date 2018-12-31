@@ -83,11 +83,17 @@ html {
 
 .Article img {
   width: 100%;
-  height: auto+3px;
+  height: auto;
 }
 
 .Article a {
   text-decoration: none;
+}
+
+.Article a h4 {
+  background-color: rgb(193, 239, 250);
+  padding: 10px;
+  margin: 0px;
 }
 
 .Article a p {
