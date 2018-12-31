@@ -29,8 +29,8 @@ const get_news = news => {
 const navBar = <div className="navBar">
         <h1>CryptoLive</h1>
         <div>
-            <span>Home</span>
-            <span>About</span>
+            <a href="#">Home</a>
+            <a href="#">About</a>
         </div>
     </div>;
 

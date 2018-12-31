@@ -38,8 +38,6 @@ html {
 
 .navBar {
   background-color: rgb(255, 255, 255);
-  /* border-radius: 5px; */
-  background-color: red;
   border-style: solid;
   background-image: url('./dark_pattern.jpg');
 }
@@ -47,42 +45,48 @@ html {
 .navBar h1{
   background-color: rgb(255, 255, 255);
   /* border-radius: 5px; */
-  background-color: red;
+  background-color: #61dafb;
   border-style: solid;
 }
 
 .navBar div {
-  background-color: red;
+  background-color: #61dafb;
   display: inline-block;
   padding: 0px 20px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
-  /* width: 80%; */
+  /* padding: 10px; */
+  /* width: 100%; */
 }
 
 .navBar div a {
-  /* margin-inline-start: 10%; */
+  padding: 10px;
+  color:black;
 }
 
 .Chart-main {
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  border-color: rgb(0, 0, 0);
-  border-style: solid;
-  margin: 20px;
-}
-
-.Article {
   background-color: azure;
   border-radius: 5px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
   margin: 20px;
-  width: 40%;
+}
+
+.Articles {
+  text-align: center; 
+}
+
+.Article {
+  background-color: azure;
+  border-radius: 1px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  margin: 10px;
+  width: 45%;
   height: auto;
   display: inline-block;
   vertical-align: top;
-  text-align: center;
+  text-align: center; 
 }
 
 .Article img {
@@ -103,4 +107,3 @@ html {
   background-color: azure;
   color: black;
 }
-

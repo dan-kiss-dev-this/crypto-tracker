@@ -25,7 +25,7 @@ class NewsComponent extends React.Component {
                 {this.props.fullData.news === null ? 
                     <h1><Skeleton count={11} height={70}/></h1> 
                     :
-                    <div>
+                    <div className="Articles">
                         {this.props.fullData.news.map((singleNews, index) => 
                             article(singleNews, index)
                         )};
