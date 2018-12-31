@@ -29,9 +29,9 @@ const get_news = news => {
 const navBar = <div className="navBar">
         <h1>CryptoLive</h1>
         <div>
-            <a href="#">Charts</a>
-            <a href="#">News</a>
-            <a href="#">About</a>
+            <a href="https://github.com/dan-kiss-dev-this">Charts</a>
+            <a href="https://github.com/dan-kiss-dev-this">News</a>
+            <a href="https://github.com/dan-kiss-dev-this">About</a>
         </div>
     </div>;
 

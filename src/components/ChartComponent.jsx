@@ -28,6 +28,7 @@ class CandleStickChart extends React.Component {
 					seriesName="MSFT"
 					data={data}
 					xAccessor={xAccessor}
+					displayXAccessor={xAccessor}
 					xScale={scaleTime()}
                      xExtents={xExtents}
                      >

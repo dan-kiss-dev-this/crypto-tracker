@@ -2,10 +2,6 @@ html {
   background-color: rgba(16, 17, 17, 0.842);
 }
 
-.App {
-  /* text-align: center; */
-}
-
 .Chart-main div label{
   visibility: hidden;
 }
@@ -35,7 +31,6 @@ html {
   color: #61dafb;
 }
 
-
 .navBar {
   background-color: rgb(255, 255, 255);
   border-style: solid;
@@ -44,7 +39,6 @@ html {
 
 .navBar h1{
   background-color: rgb(255, 255, 255);
-  /* border-radius: 5px; */
   background-color: #61dafb;
   border-style: solid;
 }
@@ -55,8 +49,6 @@ html {
   padding: 0px 20px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
-  /* padding: 10px; */
-  /* width: 100%; */
 }
 
 .navBar div a {
@@ -82,7 +74,7 @@ html {
   border-color: rgb(0, 0, 0);
   border-style: solid;
   margin: 10px;
-  width: 45%;
+  width: 90%;
   height: auto;
   display: inline-block;
   vertical-align: top;
@@ -107,3 +99,10 @@ html {
   background-color: azure;
   color: black;
 }
+
+@media screen and (min-width: 500px) {
+  .Article {
+    width: 40%;
+  }
+}
+
