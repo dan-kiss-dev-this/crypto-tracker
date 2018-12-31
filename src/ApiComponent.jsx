@@ -26,6 +26,14 @@ const get_news = news => {
     }
 }
 
+const navBar = () => <div className="navBar">
+        <h1>CryptoLive</h1>
+        <div>
+            <a>Home</a>
+            <a>About</a>
+        </div>
+    </div>;
+
 //we define the mapStateToProps function where we will pass in to the connect method further down
 //We assign the entire state here to the fullData property 
 const mapStateToProps = state => {
@@ -101,19 +109,21 @@ class ApiComponent extends React.Component {
         return (
             this.state.apiData.Data !== undefined ?
                 <div>
+                    {navBar()}
                     <div className="Chart-main">
-                        <h1>Dan's Crypto Chart and News</h1>
-                        <span>Select Coin </span><select autoFocus onChange={e => {
-                            this.handleChange(e); 
-                        }}>
-                            <option value='BTC'>Bitcoin</option>
-                            <option value='ETH'>Ethereum</option>
-                            <option value='XRP'>Ripple</option>
-                            <option value='LTC'>Litecoin</option>
-                            <option value='USDT'>Tether</option>
-                            <option value='XLM'>Stellar</option>
-                            <option value='XMR'>Monero</option>
-                        </select>
+                        <h4>Select Coin:
+                            <select onChange={e => {
+                                this.handleChange(e); 
+                            }}>
+                                <option value='BTC'>Bitcoin</option>
+                                <option value='ETH'>Ethereum</option>
+                                <option value='XRP'>Ripple</option>
+                                <option value='LTC'>Litecoin</option>
+                                <option value='USDT'>Tether</option>
+                                <option value='XLM'>Stellar</option>
+                                <option value='XMR'>Monero</option>
+                            </select>
+                        </h4>
                         <TypeChooser >
                             {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
                         </TypeChooser>

@@ -3,7 +3,7 @@ html {
 }
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .Chart-main div label{
@@ -35,17 +35,26 @@ html {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.navBar {
+  background-color: rgb(255, 255, 255);
+  /* border-radius: 5px; */
+  /* border-color-bottom: rgb(0, 0, 0); */
+  border-style: solid;
+  /* margin: 20px; */
 }
 
-select {
-  font-size: 16px;
+.navBar div {
+  background-color: red;
+  display: inline-block;
+  padding: 0px 20px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  /* width: 80%; */
+}
+
+.navBar div a {
+  /* margin-inline-start: 10%; */
 }
 
 .Chart-main {
@@ -62,6 +71,10 @@ select {
   border-color: rgb(0, 0, 0);
   border-style: solid;
   margin: 20px;
+  width: 40%;
+  height: auto;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .Article img {
