@@ -1,5 +1,5 @@
 html {
-  background-color: rgba(0, 235, 252, 0.842);
+  background-color: rgba(16, 17, 17, 0.842);
 }
 
 .App {
@@ -39,9 +39,16 @@ html {
 .navBar {
   background-color: rgb(255, 255, 255);
   /* border-radius: 5px; */
-  /* border-color-bottom: rgb(0, 0, 0); */
+  background-color: red;
   border-style: solid;
-  /* margin: 20px; */
+  background-image: url('./dark_pattern.jpg');
+}
+
+.navBar h1{
+  background-color: rgb(255, 255, 255);
+  /* border-radius: 5px; */
+  background-color: red;
+  border-style: solid;
 }
 
 .navBar div {
@@ -66,7 +73,7 @@ html {
 }
 
 .Article {
-  background-color: rgb(219, 227, 230);
+  background-color: azure;
   border-radius: 5px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
@@ -75,15 +82,21 @@ html {
   height: auto;
   display: inline-block;
   vertical-align: top;
+  text-align: center;
 }
 
 .Article img {
   width: 100%;
-  height: auto;
+  height: auto+3px;
 }
 
 .Article a {
   text-decoration: none;
+}
+
+.Article a p {
+  text-align: left;
+  padding: 10px;
 }
 
 .Article-Text {

@@ -26,11 +26,11 @@ const get_news = news => {
     }
 }
 
-const navBar = () => <div className="navBar">
+const navBar = <div className="navBar">
         <h1>CryptoLive</h1>
         <div>
-            <a>Home</a>
-            <a>About</a>
+            <span>Home</span>
+            <span>About</span>
         </div>
     </div>;
 
@@ -109,7 +109,7 @@ class ApiComponent extends React.Component {
         return (
             this.state.apiData.Data !== undefined ?
                 <div>
-                    {navBar()}
+                    {navBar}
                     <div className="Chart-main">
                         <h4>Select Coin:
                             <select onChange={e => {
