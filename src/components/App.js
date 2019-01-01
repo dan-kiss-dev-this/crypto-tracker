@@ -6,22 +6,22 @@ import '../css/App.css';
 
 //We define the reducer here so that we can pass it in when we create the store
 const coinReducer = (state = {
-  coin: 'BTC', 
+  initialCoin: 'BTC', 
   news: null, 
   coinData: null 
   }, action) => {
-  switch (action.type) {
-    case "GET_COIN_DATA":
-    let newCoinData = action.value;
-    state.coinData = newCoinData;
-    return state;
-    case "GET_NEWS":
-    let news = action.value
-    state.news = news.articles
-    return state;
-    default:
-    // if you wanted to destructure state into an array = [...state];
-      return state;
+    switch (action.type) {
+      case "GET_COIN_DATA":
+        let newCoinData = action.value;
+        state.coinData = newCoinData;
+        return state;
+      case "GET_NEWS":
+        let news = action.value;
+        state.news = news.articles;
+        return state;
+      default:
+      // if you wanted to destructure state into an array = [...state];
+        return state;
   }
 }
 

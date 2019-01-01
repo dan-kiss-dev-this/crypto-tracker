@@ -52,7 +52,7 @@ class ApiComponent extends React.Component {
         super(props);
         this.state = {
             // apiData: {},
-            coinSelected: this.props.fullData.coin,
+            coinSelected: this.props.fullData.initialCoin,
             // coinData: {}
         }
     }
@@ -62,13 +62,11 @@ class ApiComponent extends React.Component {
             coinSelected: e.target.value
         });
         await this.fetchCoinData();
-        await this.props.dispatch(get_coin_data(this.state.coinSelected));
     };
 
     async componentDidMount() {
-        await this.fetchCoinData();
         await this.fetchNews();
-        this.forceUpdate();
+        await this.fetchCoinData();
     }
 
     async fetchCoinData() {
@@ -77,9 +75,10 @@ class ApiComponent extends React.Component {
         let response = await fetch(site);
         try {
             if (response.ok) {
-                let apiData = await response.json()
-                let coinData = apiData.Data
-                await this.props.dispatch(get_coin_data(coinData))
+                let apiData = await response.json();
+                let coinData = await apiData.Data;
+                await this.props.dispatch(get_coin_data(coinData));
+                await this.forceUpdate();
             }
         } catch (error) {
             alert('Error occured reload page');
