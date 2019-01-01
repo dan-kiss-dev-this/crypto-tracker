@@ -1,5 +1,5 @@
 import React from 'react';
-import CandleStickChart from './ChartComponent';
+import CandleStickChart from './CandleStickChart';
 import { TypeChooser } from "react-stockcharts/lib/helper";
 import logo from '../images/logo.svg';
 import '../css/App.css';
@@ -51,8 +51,9 @@ class ApiComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            apiData: {},
+            // apiData: {},
             coinSelected: this.props.fullData.coin,
+            coinData: {}
         }
     }
 
@@ -65,8 +66,9 @@ class ApiComponent extends React.Component {
     };
 
     async componentDidMount() {
-        await this.fetchNews();
         await this.fetchCoinData();
+        await this.fetchNews();
+        this.forceUpdate();
     }
 
     async fetchCoinData() {
@@ -76,9 +78,8 @@ class ApiComponent extends React.Component {
         try {
             if (response.ok) {
                 let apiData = await response.json()
-                this.setState({
-                    apiData,
-                });
+                let coinData = apiData.Data
+                await this.props.dispatch(change_coin(coinData))
             }
         } catch (error) {
             alert('Error occured reload page');
@@ -101,9 +102,8 @@ class ApiComponent extends React.Component {
     }
 
     render() {
-        console.log('state', this.state,' props', this.props);
         return (
-            this.state.apiData.Data !== undefined ?
+            this.props.fullData.coinData !== null ?
             <div>
                 {navBar}
                 <div className="Chart-main">
@@ -121,7 +121,10 @@ class ApiComponent extends React.Component {
                         </select>
                     </h4>
                     <TypeChooser >
-                        {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
+                        {type => <CandleStickChart 
+                        type={type} 
+                        data={this.props.fullData.coinData} 
+                        />}
                     </TypeChooser>
                 </div>
                 <NewsComponent /> 
@@ -133,8 +136,7 @@ class ApiComponent extends React.Component {
                 </SkeletonTheme>
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <a
-                        className="App-link"
+                    <a  className="App-link"
                         href="https://github.com/dan-kiss-dev-this/crypto-tracker"
                         target="_blank"
                         rel="noopener noreferrer"

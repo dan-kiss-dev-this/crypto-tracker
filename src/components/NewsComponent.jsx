@@ -19,21 +19,8 @@ const article = (obj, index) => <div key={index} className="Article">
 
 
 class NewsComponent extends React.Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         // apiData: {},
-    //         // coinSelected: this.props.fullData.coin,
-    //         newsData: this.props.fullData.news,
-    //     }
-    // }
-
-    componentDidUpdate() {
-        console.log(32)
-    }
     
     render() {
-        console.log(23,'props',this.props,'state',this.state)
         return (
             <div>
                 {this.props.fullData.news === null ? 
