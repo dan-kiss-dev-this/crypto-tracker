@@ -18,12 +18,10 @@ html {
 }
 
 .Chart-main div label{
-  /* height: 0px; */
   display: none;
 }
 
 .Chart-main div select{
-  /* height: 0px; */
   display: none;
 }
 
@@ -113,6 +111,7 @@ html {
   background-color: rgb(206, 250, 250);
   padding-top: 10px;
   margin: 0px;
+  padding: 10px;
 }
 
 .Article a p {
