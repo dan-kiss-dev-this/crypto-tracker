@@ -26,14 +26,6 @@ const get_news = news => {
     }
 }
 
-const navBar = <div className="navBar">
-        <h1>CryptoLive</h1>
-        <div>
-            <a href="https://github.com/dan-kiss-dev-this">Home</a>
-            <a href="https://github.com/dan-kiss-dev-this">About</a>
-        </div>
-    </div>;
-
 //we define the mapStateToProps function where we will pass in to the connect method further down
 //We assign the entire state here to the fullData property 
 const mapStateToProps = state => {
@@ -47,13 +39,19 @@ const mapStateToProps = state => {
 //    return{}; 
 //};
 
+const navBar =  <div className="navBar">
+                    <h1>CryptoLive</h1>
+                    <div>
+                        <a href="https://github.com/dan-kiss-dev-this">Github</a>
+                        <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">Author</a>
+                    </div>
+                </div>;
+
 class ApiComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // apiData: {},
             coinSelected: this.props.fullData.initialCoin,
-            // coinData: {}
         }
     }
 

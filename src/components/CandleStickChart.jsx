@@ -12,7 +12,6 @@ import { last, timeIntervalBarWidth } from "react-stockcharts/lib/utils";
 
 class CandleStickChart extends React.Component {
 	render() {
-		console.log(14,this.props);
         const { type, width, data, ratio } = this.props;
         const xAccessor = d => new Date(d.time*1000);
         const xExtents = [
