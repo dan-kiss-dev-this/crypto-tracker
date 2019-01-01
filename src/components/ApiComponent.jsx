@@ -3,7 +3,7 @@ import CandleStickChart from './ChartComponent';
 import { TypeChooser } from "react-stockcharts/lib/helper";
 import logo from '../images/logo.svg';
 import '../css/App.css';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
@@ -29,8 +29,7 @@ const get_news = news => {
 const navBar = <div className="navBar">
         <h1>CryptoLive</h1>
         <div>
-            <a href="https://github.com/dan-kiss-dev-this">Charts</a>
-            <a href="https://github.com/dan-kiss-dev-this">News</a>
+            <a href="https://github.com/dan-kiss-dev-this">Home</a>
             <a href="https://github.com/dan-kiss-dev-this">About</a>
         </div>
     </div>;
@@ -109,43 +108,45 @@ class ApiComponent extends React.Component {
         console.log('state', this.state,' props', this.props);
         return (
             this.state.apiData.Data !== undefined ?
-                <div>
-                    {navBar}
-                    <div className="Chart-main">
-                        <h4>Select Coin:
-                            <select onChange={e => {
-                                this.handleChange(e); 
-                            }}>
-                                <option value='BTC'>Bitcoin</option>
-                                <option value='ETH'>Ethereum</option>
-                                <option value='XRP'>Ripple</option>
-                                <option value='LTC'>Litecoin</option>
-                                <option value='USDT'>Tether</option>
-                                <option value='XLM'>Stellar</option>
-                                <option value='XMR'>Monero</option>
-                            </select>
-                        </h4>
-                        <TypeChooser >
-                            {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
-                        </TypeChooser>
-                    </div>
-                    <NewsComponent />
+            <div>
+                {navBar}
+                <div className="Chart-main">
+                    <h4>Select Coin:
+                        <select onChange={e => {
+                            this.handleChange(e); 
+                        }}>
+                            <option value='BTC'>Bitcoin</option>
+                            <option value='ETH'>Ethereum</option>
+                            <option value='XRP'>Ripple</option>
+                            <option value='LTC'>Litecoin</option>
+                            <option value='USDT'>Tether</option>
+                            <option value='XLM'>Stellar</option>
+                            <option value='XMR'>Monero</option>
+                        </select>
+                    </h4>
+                    <TypeChooser >
+                        {type => <CandleStickChart type={type} data={this.state.apiData.Data} />}
+                    </TypeChooser>
                 </div>
-                :
-                <div className="App">
+                <NewsComponent /> 
+            </div>
+            :
+            <div className="App">
+                <SkeletonTheme color='gray' highlightColor='white'>
                     <h1><Skeleton count={1} height={70}/></h1>
-                    <div className="App-header">
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <a
-                            className="App-link"
-                            href="https://github.com/dan-kiss-dev-this/crypto-tracker"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Loading...
-                        </a>
-                    </div>
+                </SkeletonTheme>
+                <div className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <a
+                        className="App-link"
+                        href="https://github.com/dan-kiss-dev-this/crypto-tracker"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Loading...
+                    </a>
                 </div>
+            </div>
         );
     }
 }
