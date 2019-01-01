@@ -11,7 +11,7 @@ const coinReducer = (state = {
   coinData: null 
   }, action) => {
   switch (action.type) {
-    case "CHANGE_COIN":
+    case "GET_COIN_DATA":
     let newCoinData = action.value;
     state.coinData = newCoinData;
     return state;

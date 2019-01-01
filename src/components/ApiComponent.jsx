@@ -9,13 +9,13 @@ import NewsComponent from './NewsComponent';
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
 //It's useful, but not necessary, to define your action types as variables and reference them when you define your actions
-const CHANGE_COIN = "CHANGE_COIN";
+const GET_COIN_DATA = "GET_COIN_DATA";
 const GET_NEWS = "GET_NEWS";
 
-const change_coin = newCoin => {
+const get_coin_data = CoinData => { 
     return {
-        type: CHANGE_COIN,
-        value: newCoin
+        type: GET_COIN_DATA,
+        value: CoinData
     };
 };
 
@@ -53,7 +53,7 @@ class ApiComponent extends React.Component {
         this.state = {
             // apiData: {},
             coinSelected: this.props.fullData.coin,
-            coinData: {}
+            // coinData: {}
         }
     }
 
@@ -62,7 +62,7 @@ class ApiComponent extends React.Component {
             coinSelected: e.target.value
         });
         await this.fetchCoinData();
-        await this.props.dispatch(change_coin(this.state.coinSelected));
+        await this.props.dispatch(get_coin_data(this.state.coinSelected));
     };
 
     async componentDidMount() {
@@ -79,7 +79,7 @@ class ApiComponent extends React.Component {
             if (response.ok) {
                 let apiData = await response.json()
                 let coinData = apiData.Data
-                await this.props.dispatch(change_coin(coinData))
+                await this.props.dispatch(get_coin_data(coinData))
             }
         } catch (error) {
             alert('Error occured reload page');
