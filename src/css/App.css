@@ -60,7 +60,6 @@ html {
 }
 
 .navBar div {
-  display: inline-block;
   border-color: rgb(0, 0, 0);
   border-style: solid;
   background-color: #61dafb;
@@ -68,14 +67,15 @@ html {
 }
 
 .navBar div a {
-  background-color: #61dafb;
   padding: 10px;
+  margin-right: 20px;
+  background-color: azure;
+  border-radius: 10px;
   text-decoration: none;
 }
 
 .navBar div a:hover {
   padding: 10px;
-  text-decoration: none;
   background-color: azure;
   color: rgb(68, 0, 255);
 }
@@ -132,6 +132,14 @@ html {
   .Article {
     width: 40%;
   }
+
+  .navBar div a {
+    background-color: #61dafb;
+    padding: 10px;
+    text-decoration: none;
+    display: inline
+  }
+
 }
 
 
