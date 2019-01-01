@@ -1,6 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Mobile-Page](/src/images/mobile.png?raw=true "mobile_landing_page")
 
-## Available Scripts
+CryptoLive Mobile Landing  - Note the ability to use a dropdown to pick different cryptos
+
+![Mobile-Page](/src/images/desktop.png?raw=true "desktop_landing_page")
+
+CryptoLive Desktop Landing Page
+
+![Mobile-Page](/src/images/loadScreen.png?raw=true "loading_screen")
+
+CryptoLive Loading Screen with Skeleton Loader
+
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
 In the project directory, you can run:
 
@@ -12,11 +25,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
@@ -27,25 +35,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Project
+CryptoLive is a easy way to watch the price action and news of the 7 most popular cryptos. It was built with a focus on using React, Redux, API's and CSS to achieve data visualization and presentation. It features responsive design to work on both mobile and desktop screen sizes. It is a single page app and a lot of focus has been put into building code with semantic clarity as well.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Idea's for later development: Use env file for additional privacy. You need to make the key name start with 'REACT_APP_' in the project root directory so REACT_APP_SECRET_KEY = 123456  
+console.log(process.env) to see your keys.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-## See the site
-[Crypto-Tracker](https://dan-kiss-dev-this.github.io/crypto-tracker/index.html)
-
-##Env note on create-react-app
-You need to make the key name start with 'REACT_APP_' in the project root directory so REACT_APP_SECRET_KEY = 123456  
-console.log(process.env) to see your keys
+MIT License
+Author: Dan Kiss Jan 1 2019
