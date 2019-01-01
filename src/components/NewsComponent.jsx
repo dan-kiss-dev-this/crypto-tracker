@@ -22,7 +22,7 @@ class NewsComponent extends React.Component {
     render() {
         return (
             <div>
-                {this.props.fullData.news !== null ? 
+                {this.props.fullData.news === null ? 
                     <SkeletonTheme color='gray' highlightColor='white'>
                         <p><Skeleton count={3} height={20}/></p>
                     </SkeletonTheme>
