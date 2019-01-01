@@ -53,7 +53,6 @@ class ApiComponent extends React.Component {
         this.state = {
             apiData: {},
             coinSelected: this.props.fullData.coin,
-            newsData: {},
         }
     }
 
@@ -61,16 +60,16 @@ class ApiComponent extends React.Component {
         await this.setState({
             coinSelected: e.target.value
         });
-        await this.fetchData();
+        await this.fetchCoinData();
         await this.props.dispatch(change_coin(this.state.coinSelected));
     };
 
     async componentDidMount() {
         await this.fetchNews();
-        this.fetchData();
+        await this.fetchCoinData();
     }
 
-    async fetchData() {
+    async fetchCoinData() {
         const coin = this.state.coinSelected;
         const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30&api_key={42fe264b1c5770a241062077c69f096b9548e03d7b37b634e9fc2c736d33ec98}`;
         let response = await fetch(site);
@@ -93,10 +92,7 @@ class ApiComponent extends React.Component {
         try {
             if (response.ok) {
                 let newsData = await response.json();
-                await this.setState({
-                    newsData,
-                });
-                await this.props.dispatch(get_news(this.state.newsData));
+                await this.props.dispatch(get_news(newsData));
             }
         } catch (error) {
             alert('Error occured reload page');
