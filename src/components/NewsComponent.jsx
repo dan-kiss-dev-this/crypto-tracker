@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/App.css';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
@@ -22,8 +22,10 @@ class NewsComponent extends React.Component {
     render() {
         return (
             <div>
-                {this.props.fullData.news === null ? 
-                    <h1><Skeleton count={11} height={70}/></h1> 
+                {this.props.fullData.news !== null ? 
+                    <SkeletonTheme color='gray' highlightColor='white'>
+                        <p><Skeleton count={3} height={20}/></p>
+                    </SkeletonTheme>
                     :
                     <div className="Articles">
                         {this.props.fullData.news.map((singleNews, index) => 
