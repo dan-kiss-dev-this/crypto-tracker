@@ -42,7 +42,7 @@ const mapStateToProps = state => {
 const navBar =  <div className="navBar">
                     <h1>CryptoLive</h1>
                     <div>
-                        <a href="https://github.com/dan-kiss-dev-this">Github</a>
+                        <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">Github</a>
                         <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">Author</a>
                     </div>
                 </div>;
