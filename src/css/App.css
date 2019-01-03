@@ -79,7 +79,7 @@ html {
 
 .navBar div a:hover {
   padding: 10px;
-  background-color: azure;
+  background-color: #61dafb;
   color: rgb(68, 0, 255);
 }
 
@@ -136,11 +136,20 @@ html {
     width: 40%;
   }
 
+  .navBar div {
+    background-color: azure;
+  }
+
   .navBar div a {
     background-color: #61dafb;
+    color: black;
     padding: 10px;
     text-decoration: none;
     display: inline
+  }
+
+  .navBar div a:hover {
+    background-color: azure;
   }
 
 }
