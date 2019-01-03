@@ -3,11 +3,13 @@ html {
 }
 
 .Chart-main {
+  position: relative;
   background-color: azure;
   border-radius: 5px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
-  margin: 20px;
+  margin: 30px 20px;
+  top: 30px;
 }
 
 .Chart-main h4{
@@ -47,40 +49,46 @@ html {
 }
 
 .navBar {
-  border-style: solid;
-  background-image: url('../images/dark_pattern.jpg');
-  text-align: right;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-.navBar h1{
-  padding: 10px 20px;
-  color:white;
-  text-align: center;
-}
-
-.navBar div {
-  border-color: rgb(0, 0, 0);
-  border-style: solid;
-  background-color: #61dafb;
-  width: 100%;
-}
-
-.navBar div a {
-  padding: 10px;
-  margin-right: 20px;
-  background-color: azure;
-  border-radius: 10px;
-  text-decoration: none;
+  display: none;
 }
 
 .navBar div a:hover {
   padding: 10px;
   background-color: #61dafb;
   color: rgb(68, 0, 255);
+} 
+
+.navBarMobile{
+  width: 100%;
+  position: -webkit-sticky; /* Safari */
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  color: white;
+  background-image: url('../images/dark_pattern.jpg');
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.navBarMobile h1{
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.navBarMobile div{
+  margin-top: 10px;
+}
+
+.navBarMobile div div {
+  background-color: #61dafb;
+  height: 5px;
+  width: 20px;
+  margin-top:0px;
+  margin-bottom:3px;
+  margin-right: 30px;
+  border-width: 2px;
 }
 
 .Articles {
@@ -136,20 +144,51 @@ html {
     width: 40%;
   }
 
+  .navBarMobile{
+    display:none;
+  }
+
+  .navBar {
+    display: block;
+    border-style: solid;
+    background-image: url('../images/dark_pattern.jpg');
+    text-align: right;
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .navBar h1{
+    padding: 10px 20px;
+    color:white;
+    text-align: center;
+  }
+  
   .navBar div {
-    background-color: azure;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: #61dafb;
+    width: 100%;
   }
-
+  
   .navBar div a {
-    background-color: #a6ecff;
-    color: black;
     padding: 10px;
+    margin-right: 20px;
+    background-color: azure;
+    border-radius: 10px;
     text-decoration: none;
-    display: inline
+  }
+  
+  .navBar div a:hover {
+    padding: 10px;
+    background-color: #61dafb;
+    color: rgb(68, 0, 255);
   }
 
-  .navBar div a:hover {
-    background-color: azure;
+  .Chart-main{
+    margin-top:120px;
   }
 
 }

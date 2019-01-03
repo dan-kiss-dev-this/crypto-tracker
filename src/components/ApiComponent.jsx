@@ -39,11 +39,21 @@ const mapStateToProps = state => {
 //    return{}; 
 //};
 
-const navBar =  <div className="navBar">
-                    <h1>CryptoLive</h1>
-                    <div>
-                        <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">Github</a>
-                        <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">Author</a>
+const navBar =  <div>
+                    <div className="navBar">
+                        <h1>CryptoLive</h1>
+                        <div>
+                            <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">Github</a>
+                            <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">Author</a>
+                        </div>
+                    </div>
+                    <div className="navBarMobile">
+                        <h1>CryproLive</h1>
+                        <div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>;
 
