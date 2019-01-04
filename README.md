@@ -2,7 +2,11 @@ Click here to see CryptoLive deployed [https://dan-kiss-dev-this.github.io/crypt
 
 ![Mobile-Page](/src/images/mobile.png?raw=true "mobile_landing_page")
 
-CryptoLive Mobile Landing  - Note the ability to use a dropdown to pick different cryptos
+CryptoLive Mobile Landing - Note the ability to use a dropdown to pick different cryptos
+
+![Mobile-Page-menu](/src/images/mobileSecondary.png?raw=true "mobile_landing_page-menu")
+
+CryptoLive Mobile Landing - Note the menu
 
 ![Mobile-Page](/src/images/desktop.png?raw=true "desktop_landing_page")
 
