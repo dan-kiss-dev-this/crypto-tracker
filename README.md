@@ -1,4 +1,4 @@
-#Click here to see CryptoLive deployed [https://dan-kiss-dev-this.github.io/crypto-tracker/](https://dan-kiss-dev-this.github.io/crypto-tracker/)
+# Click here to see CryptoLive deployed [https://dan-kiss-dev-this.github.io/crypto-tracker/](https://dan-kiss-dev-this.github.io/crypto-tracker/)
 
 ![Mobile-Page](/src/images/mobile.png?raw=true "mobile_landing_page")
 
