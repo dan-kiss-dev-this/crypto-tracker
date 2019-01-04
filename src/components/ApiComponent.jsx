@@ -110,7 +110,7 @@ class ApiComponent extends React.Component {
             </div>
             <div>
                 <div className="navBarMobile">
-                    <h1>CryproLive</h1>
+                    <h1>CryptoLive</h1>
                     <div onClick={() => {this.handleMobileMenu() }} >
                         <div></div>
                         <div></div>

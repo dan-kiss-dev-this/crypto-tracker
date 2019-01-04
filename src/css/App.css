@@ -78,13 +78,16 @@ html {
 
 .navBarMobile div{
   margin-top: 10px;
+  width:70px;
+  height: 50px;
+  margin-top: 0px;
+  padding-top: 5px;
 }
 
 .navBarMobile div div {
   background-color: #61dafb;
-  height: 5px;
-  width: 20px;
-  margin-top:0px;
+  height: 2px;
+  width: 40px;
   margin-bottom:3px;
   margin-right: 30px;
   border-width: 2px;
@@ -103,8 +106,7 @@ html {
 }
 
 .dropDown div{
-  background-color: #61dafb;
-  color: black;
+  background-color: #25ccfaa4;
   padding: 10px 5px;
   text-align: left;
   border-radius: 1px;
@@ -112,11 +114,12 @@ html {
 }
 
 .dropDown div:hover{
-  background-color: #25ccfa;
+  background-color: #61dafb;
 }
 
 .dropDown div a{
   color: black;
+  font-weight: bold;
 }
 
 .dropDown div a:hover{
