@@ -39,29 +39,13 @@ const mapStateToProps = state => {
 //    return{}; 
 //};
 
-const navBar =  <div>
-                    <div className="navBar">
-                        <h1>CryptoLive</h1>
-                        <div>
-                            <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">Github</a>
-                            <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">Author</a>
-                        </div>
-                    </div>
-                    <div className="navBarMobile">
-                        <h1>CryproLive</h1>
-                        <div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>;
 
 class ApiComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             coinSelected: this.props.fullData.initialCoin,
+            showMobileMenu: false
         }
     }
 
@@ -71,6 +55,13 @@ class ApiComponent extends React.Component {
         });
         await this.fetchCoinData();
     };
+
+    async handleMobileMenu () {
+        await this.setState({
+            showMobileMenu: !this.state.showMobileMenu
+        });
+        console.log('in',this.state.showMobileMenu);
+    }
 
     async componentDidMount() {
         await this.fetchNews();
@@ -109,6 +100,46 @@ class ApiComponent extends React.Component {
     }
 
     render() {
+        const navBar =  <div>
+            <div className="navBar">
+                <h1>CryptoLive</h1>
+                <div>
+                    <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">Github</a>
+                    <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">Author</a>
+                </div>
+            </div>
+            <div>
+                <div className="navBarMobile">
+                    <h1>CryproLive</h1>
+                    <div onClick={() => {this.handleMobileMenu() }} >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                </div>
+                        {this.state.showMobileMenu ?
+                            <div className="dropDown">
+                                <div>
+                                    <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">
+                                        Github
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">
+                                        Author
+                                    </a>
+                                </div>
+                            </div>
+                            :
+                            <div className="dropDown">
+                              {null}   
+                            </div>
+                        }
+        </div>
+                
+
+        console.log(124,this.state);
         return (
             this.props.fullData.coinData !== null ?
             <div>
