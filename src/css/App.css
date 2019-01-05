@@ -111,6 +111,15 @@ html {
   text-align: left;
   border-radius: 1px;
   text-align: center;
+  z-index: 2;
+  position: fixed;
+  top:50px;
+  right:30px;
+}
+
+div .author{
+  right:29px;
+  top: 92px;
 }
 
 .dropDown div:hover{
@@ -124,6 +133,10 @@ html {
 
 .dropDown div a:hover{
   color: azure;
+}
+
+.react-stockchart {
+  z-index: 1;
 }
 
 .Articles {

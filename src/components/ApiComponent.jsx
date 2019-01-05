@@ -121,12 +121,12 @@ class ApiComponent extends React.Component {
                         {this.state.showMobileMenu ?
                             <div className="dropDown">
                                 <div>
-                                    <a href="https://github.com/dan-kiss-dev-this/crypto-tracker">
+                                    <a className="github" href="https://github.com/dan-kiss-dev-this/crypto-tracker">
                                         Github
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="https://www.linkedin.com/in/dan-kiss-dev-this/">
+                                <div className="author">
+                                    <a  href="https://www.linkedin.com/in/dan-kiss-dev-this/">
                                         Author
                                     </a>
                                 </div>
