@@ -117,35 +117,34 @@ class ApiComponent extends React.Component {
                         <div></div>
                     </div>
                 </div>
+            </div>
+            {this.state.showMobileMenu ?
+                <div className="dropDown">
+                    <div>
+                        <a className="github" href="https://github.com/dan-kiss-dev-this/crypto-tracker">
+                            Github
+                        </a>
+                    </div>
+                    <div className="author">
+                        <a  href="https://www.linkedin.com/in/dan-kiss-dev-this/">
+                            Author
+                        </a>
+                    </div>
                 </div>
-                        {this.state.showMobileMenu ?
-                            <div className="dropDown">
-                                <div>
-                                    <a className="github" href="https://github.com/dan-kiss-dev-this/crypto-tracker">
-                                        Github
-                                    </a>
-                                </div>
-                                <div className="author">
-                                    <a  href="https://www.linkedin.com/in/dan-kiss-dev-this/">
-                                        Author
-                                    </a>
-                                </div>
-                            </div>
-                            :
-                            <div className="dropDown">
-                              {null}   
-                            </div>
-                        }
-        </div>
-                
+                :
+                <div className="dropDown">
+                    {null}   
+                </div>
+            }
+        </div>      
 
-        console.log(124,this.state);
+        console.log(141,this.state);
         return (
             this.props.fullData.coinData !== null ?
             <div>
                 {navBar}
-                <div className="Chart-main">
-                    <h4>Select Coin:
+                <div className="Dropdown-main">
+                <h4>Select Coin: 
                         <select onChange={e => {
                             this.handleChange(e); 
                         }}>
@@ -158,6 +157,9 @@ class ApiComponent extends React.Component {
                             <option value='XMR'>Monero</option>
                         </select>
                     </h4>
+                </div>
+                <div className="Chart-main">
+                    
                     <TypeChooser >
                         {type => <CandleStickChart 
                         type={type} 
