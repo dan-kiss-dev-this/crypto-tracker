@@ -140,7 +140,7 @@ class ApiComponent extends React.Component {
 
         console.log(141,this.state, this.props);
         return (
-            this.props.fullData.coinData === null && this.props.fullData.coinData.length > 0 && 
+            this.props.fullData.coinData !== null && this.props.fullData.coinData.length > 0 && 
             this.props.fullData.news !== null && 
             this.props.fullData.news.length > 0 ?
             <div>
