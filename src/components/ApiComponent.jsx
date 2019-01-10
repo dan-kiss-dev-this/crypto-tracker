@@ -161,13 +161,12 @@ class ApiComponent extends React.Component {
                     </h4>
                 </div>
                 <div className="Chart-main">
-                    
-                    {/* <TypeChooser >
+                    <TypeChooser >
                         {type => <CandleStickChart 
                         type={type} 
                         data={this.props.fullData.coinData} 
                         />}
-                    </TypeChooser> */}
+                    </TypeChooser>
                 </div>
                 <NewsComponent /> 
             </div>
@@ -183,7 +182,7 @@ class ApiComponent extends React.Component {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        API Data not availible - check back later...
+                        APIs Loading...
                     </a>
                 </div>
             </div>
