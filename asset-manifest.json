@@ -1,15 +1,15 @@
 {
-  "main.css": "/crypto-tracker/static/css/main.0caab5b4.chunk.css",
-  "main.js": "/crypto-tracker/static/js/main.7502b2ef.chunk.js",
-  "main.js.map": "/crypto-tracker/static/js/main.7502b2ef.chunk.js.map",
-  "static/js/1.8d8e60ee.chunk.js": "/crypto-tracker/static/js/1.8d8e60ee.chunk.js",
-  "static/js/1.8d8e60ee.chunk.js.map": "/crypto-tracker/static/js/1.8d8e60ee.chunk.js.map",
+  "main.css": "/crypto-tracker/static/css/main.1a5f7fd1.chunk.css",
+  "main.js": "/crypto-tracker/static/js/main.6dadae87.chunk.js",
+  "main.js.map": "/crypto-tracker/static/js/main.6dadae87.chunk.js.map",
+  "static/js/1.72d53481.chunk.js": "/crypto-tracker/static/js/1.72d53481.chunk.js",
+  "static/js/1.72d53481.chunk.js.map": "/crypto-tracker/static/js/1.72d53481.chunk.js.map",
   "runtime~main.js": "/crypto-tracker/static/js/runtime~main.8a9cc849.js",
   "runtime~main.js.map": "/crypto-tracker/static/js/runtime~main.8a9cc849.js.map",
-  "static/css/main.0caab5b4.chunk.css.map": "/crypto-tracker/static/css/main.0caab5b4.chunk.css.map",
+  "static/css/main.1a5f7fd1.chunk.css.map": "/crypto-tracker/static/css/main.1a5f7fd1.chunk.css.map",
   "static/media/App.css": "/crypto-tracker/static/media/dark_pattern.33b0f1c4.jpg",
   "static/media/logo.svg": "/crypto-tracker/static/media/logo.5d5d9eef.svg",
   "index.html": "/crypto-tracker/index.html",
-  "precache-manifest.5fffd0d9bd9031387f663dafc6eca874.js": "/crypto-tracker/precache-manifest.5fffd0d9bd9031387f663dafc6eca874.js",
+  "precache-manifest.9f075e65cd9d707c90e2cf51dd5ad5e4.js": "/crypto-tracker/precache-manifest.9f075e65cd9d707c90e2cf51dd5ad5e4.js",
   "service-worker.js": "/crypto-tracker/service-worker.js"
 }
