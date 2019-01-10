@@ -138,9 +138,11 @@ class ApiComponent extends React.Component {
             }
         </div>      
 
-        console.log(141,this.state);
+        console.log(141,this.state, this.props);
         return (
-            this.props.fullData.coinData !== null ?
+            this.props.fullData.coinData === null && this.props.fullData.coinData.length > 0 && 
+            this.props.fullData.news !== null && 
+            this.props.fullData.news.length > 0 ?
             <div>
                 {navBar}
                 <div className="Dropdown-main">
@@ -160,12 +162,12 @@ class ApiComponent extends React.Component {
                 </div>
                 <div className="Chart-main">
                     
-                    <TypeChooser >
+                    {/* <TypeChooser >
                         {type => <CandleStickChart 
                         type={type} 
                         data={this.props.fullData.coinData} 
                         />}
-                    </TypeChooser>
+                    </TypeChooser> */}
                 </div>
                 <NewsComponent /> 
             </div>
@@ -181,7 +183,7 @@ class ApiComponent extends React.Component {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Loading...
+                        API Data not availible - check back later...
                     </a>
                 </div>
             </div>
