@@ -94,7 +94,7 @@ class ApiComponent extends React.Component {
                 await this.props.dispatch(get_news(newsData));
             }
         } catch (error) {
-            alert('Error occured New Data API reload page');
+            alert('Error occured News Data API reload page');
             console.error(error);
         }
     }
