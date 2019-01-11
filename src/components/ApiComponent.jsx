@@ -60,7 +60,6 @@ class ApiComponent extends React.Component {
         await this.setState({
             showMobileMenu: !this.state.showMobileMenu
         });
-        console.log('in',this.state.showMobileMenu);
     }
 
     async componentDidMount() {
@@ -71,12 +70,12 @@ class ApiComponent extends React.Component {
     async fetchCoinData() {
         const coin = this.state.coinSelected;
         const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30&api_key={42fe264b1c5770a241062077c69f096b9548e03d7b37b634e9fc2c736d33ec98}`;
-        let response = await fetch(site);
+        const response = await fetch(site);
         try {
             if (response.ok) {
-                let apiData = await response.json();
-                let coinData = await apiData.Data;
-                await this.props.dispatch(get_coin_data(coinData));
+                const apiData = await response.json();
+                const { Data } = apiData;
+                await this.props.dispatch(get_coin_data(Data));
                 await this.forceUpdate();
             }
         } catch (error) {
@@ -87,10 +86,10 @@ class ApiComponent extends React.Component {
 
     async fetchNews() {
         const site = 'https://newsapi.org/v2/everything?sources=crypto-coins-news&apiKey=be6a84f3238641c2b3eb13361beffc88';
-        let response = await fetch(site)
+        const response = await fetch(site)
         try {
             if (response.ok) {
-                let newsData = await response.json();
+                const newsData = await response.json();
                 await this.props.dispatch(get_news(newsData));
             }
         } catch (error) {
@@ -146,7 +145,7 @@ class ApiComponent extends React.Component {
             <div>
                 {navBar}
                 <div className="Dropdown-main">
-                <h4>Select Coin: 
+                    <h4>Select Coin: 
                         <select onChange={e => {
                             this.handleChange(e); 
                         }}>
