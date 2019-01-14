@@ -12,10 +12,10 @@ import { connect } from 'react-redux'; //we import the connect method from react
 const GET_COIN_DATA = "GET_COIN_DATA";
 const GET_NEWS = "GET_NEWS";
 
-const get_coin_data = CoinData => { 
+const get_coin_data = coinData => { 
     return {
         type: GET_COIN_DATA,
-        value: CoinData
+        value: coinData
     };
 };
 
@@ -28,16 +28,27 @@ const get_news = news => {
 
 //we define the mapStateToProps function where we will pass in to the connect method further down
 //We assign the entire state here to the fullData property 
-const mapStateToProps = state => {
-    return {
+const mapStateToProps = state => (
+    {
         fullData: state
-    };
-};
+    }
+)
 
 //we aren't using mapDispatchToProps as we don't need it in this basic example
 //const mapDispatchToProps = state => {
 //    return{}; 
 //};
+const mapDispatchToProps = dispatch => (
+    {
+        fire_get_coin_data: (coinData) => dispatch(
+            get_coin_data(coinData)
+        ), 
+        fire_get_news: (newsData) => dispatch(
+            get_news(newsData)
+        ),
+    }
+
+)
 
 
 class ApiComponent extends React.Component {
@@ -75,7 +86,7 @@ class ApiComponent extends React.Component {
             if (response.ok) {
                 const apiData = await response.json();
                 const { Data } = apiData;
-                await this.props.dispatch(get_coin_data(Data));
+                this.props.fire_get_coin_data(Data);
                 await this.forceUpdate();
             }
         } catch (error) {
@@ -90,7 +101,8 @@ class ApiComponent extends React.Component {
         try {
             if (response.ok) {
                 const newsData = await response.json();
-                await this.props.dispatch(get_news(newsData));
+                // await this.props.dispatch(get_news(newsData));
+                this.props.fire_get_news(newsData);
             }
         } catch (error) {
             alert('Error occured News Data API reload page');
@@ -137,11 +149,12 @@ class ApiComponent extends React.Component {
             }
         </div>      
 
-        console.log(141,this.state, this.props);
+        console.log(141,this.state, this.props.dispatch);
         return (
             this.props.fullData.coinData !== null && this.props.fullData.coinData.length > 0 && 
             this.props.fullData.news !== null && 
-            this.props.fullData.news.length > 0 ?
+            this.props.fullData.news.length > 0 
+            ?
             <div>
                 {navBar}
                 <div className="Dropdown-main">
@@ -191,6 +204,6 @@ class ApiComponent extends React.Component {
 
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps,
 )(ApiComponent)
 
