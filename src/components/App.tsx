@@ -4,12 +4,17 @@ import { Provider } from 'react-redux';
 import {createStore } from 'redux';
 import '../css/App.css';
 
+interface actionObject {
+  type: string,
+  value: any,
+}
+
 //We define the reducer here so that we can pass it in when we create the store
 const coinReducer = (state = {
   initialCoin: 'BTC', 
   news: null, 
   coinData: null 
-  }, action) => {
+  }, action: actionObject) => {
     switch (action.type) {
       case "GET_COIN_DATA":
         let newCoinData = action.value;
