@@ -101,8 +101,9 @@ class ApiComponent extends React.Component {
         try {
             if (response.ok) {
                 const newsData = await response.json();
-                // await this.props.dispatch(get_news(newsData));
-                this.props.fire_get_news(newsData);
+                const { articles } = newsData;
+                // await this.props.dispatch(get_news(articles));
+                this.props.fire_get_news(articles);
             }
         } catch (error) {
             alert('Error occured News Data API reload page');
@@ -149,7 +150,7 @@ class ApiComponent extends React.Component {
             }
         </div>      
 
-        console.log(141,this.state, this.props.dispatch);
+        console.log(141,this.state, this.props);
         return (
             this.props.fullData.coinData !== null && this.props.fullData.coinData.length > 0 && 
             this.props.fullData.news !== null && 

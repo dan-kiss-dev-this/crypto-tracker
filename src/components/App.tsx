@@ -6,23 +6,53 @@ import '../css/App.css';
 
 interface actionObject {
   type: string,
-  value: any,
+  value: any[],
+}
+
+interface stateObject {
+  initialCoin: string, 
+  coinData: null | coinDataObject[],
+  news: null | newsDataObject[], 
+}
+
+interface coinDataObject {
+  close: number,
+  high: number,
+  low: number,
+  open: number,
+  time: number,
+  volumefrom: number,
+  volumeto: number,
+}
+
+interface newsDataObject {
+  author: string,
+  content: string,
+  description: string,
+  publishedAt: string,
+  source: {
+    id: string,
+    name: string,
+  },
+  title: string,
+  url: string,
+  urlToImage: string,
 }
 
 //We define the reducer here so that we can pass it in when we create the store
-const coinReducer = (state = {
+const coinReducer = (state: stateObject = {
   initialCoin: 'BTC', 
   news: null, 
   coinData: null 
   }, action: actionObject) => {
     switch (action.type) {
       case "GET_COIN_DATA":
-        let newCoinData = action.value;
+        let newCoinData: coinDataObject[] = action.value;
         state.coinData = newCoinData;
         return state;
       case "GET_NEWS":
-        let news = action.value;
-        state.news = news.articles;
+        let news: newsDataObject[] = action.value;
+        state.news = news;
         return state;
       default:
       // if you wanted to destructure state into an array = [...state];
