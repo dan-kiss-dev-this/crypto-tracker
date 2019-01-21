@@ -5,62 +5,71 @@ import logo from '../images/logo.svg';
 import '../css/App.css';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
+import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp } from '../types';
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
 //It's useful, but not necessary, to define your action types as variables and reference them when you define your actions
-const GET_COIN_DATA = "GET_COIN_DATA";
-const GET_NEWS = "GET_NEWS";
+const GET_COIN_DATA: string = "GET_COIN_DATA";
+const GET_NEWS: string = "GET_NEWS";
 
-const get_coin_data = coinData => { 
+const get_coin_data = (coinData: coinDataObject[]):actionObject => { 
     return {
         type: GET_COIN_DATA,
         value: coinData
     };
 };
 
-const get_news = news => {
+const get_news = (news: newsDataObject[]):actionObject => {
     return {
         type: GET_NEWS,
         value: news
     }
 }
 
-//we define the mapStateToProps function where we will pass in to the connect method further down
-//We assign the entire state here to the fullData property 
-const mapStateToProps = state => (
-    {
-        fullData: state
-    }
-)
-
 //we aren't using mapDispatchToProps as we don't need it in this basic example
 //const mapDispatchToProps = state => {
 //    return{}; 
 //};
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = (dispatch: any): any => (
     {
-        fire_get_coin_data: (coinData) => dispatch(
+        fire_get_coin_data: (coinData: any) => dispatch(
             get_coin_data(coinData)
         ), 
-        fire_get_news: (newsData) => dispatch(
+        fire_get_news: (newsData: any) => dispatch(
             get_news(newsData)
         ),
     }
 
 )
 
+//we define the mapStateToProps function where we will pass in to the connect method further down
+//We assign the entire state here to the fullData property 
+const mapStateToProps = (state:stateObject): stateObjectToProp => (
+    {
+        fullData: state,
+        // fire_get_coin_data:  get_coin_data,
+        // fire_get_news: get_news,
+    }
+)
 
-class ApiComponent extends React.Component {
-    constructor(props) {
+
+export interface localState {
+    coinSelected: string,
+    showMobileMenu: boolean,
+}
+
+
+class ApiComponent extends React.Component<stateObjectToProp, localState> {
+    constructor(props: stateObjectToProp) {
         super(props);
         this.state = {
             coinSelected: this.props.fullData.initialCoin,
-            showMobileMenu: false
+            showMobileMenu: false,
         }
     }
 
-    async handleChange (e) {
+    async handleChange (e: any) {
         await this.setState({
             coinSelected: e.target.value
         });
@@ -175,7 +184,7 @@ class ApiComponent extends React.Component {
                 </div>
                 <div className="Chart-main">
                     <TypeChooser >
-                        {type => <CandleStickChart 
+                        {(type:any) => <CandleStickChart 
                         type={type} 
                         data={this.props.fullData.coinData} 
                         />}

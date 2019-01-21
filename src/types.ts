@@ -37,3 +37,14 @@ export interface newsDataObject {
     url: string,
     urlToImage: string,
 }
+
+export interface stateObjectToProp {
+    fullData?: {
+        initialCoin: string, 
+        coinData: null | coinDataObject[],
+        news: null | newsDataObject[], 
+    },
+    fire_get_coin_data?: any,
+    fire_get_news?: any,
+
+}
