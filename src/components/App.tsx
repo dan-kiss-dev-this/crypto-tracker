@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApiComponent from './ApiComponent';
 import { Provider } from 'react-redux';
-import {createStore } from 'redux';
+import {createStore, Store } from 'redux';
 import '../css/App.css';
 
 interface actionObject {
@@ -44,7 +44,7 @@ const coinReducer = (state: stateObject = {
   initialCoin: 'BTC', 
   news: null, 
   coinData: null 
-  }, action: actionObject) => {
+  }, action: actionObject): stateObject => {
     switch (action.type) {
       case "GET_COIN_DATA":
         let newCoinData: coinDataObject[] = action.value;
@@ -61,7 +61,7 @@ const coinReducer = (state: stateObject = {
 }
 
 //We instantiate the store by calling the createStore method we imported and passing in the reducer we defined
-const store = createStore(coinReducer);
+const store: Store<stateObject, actionObject> = createStore(coinReducer);
 
 class App extends Component {
   render() {
