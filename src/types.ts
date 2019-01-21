@@ -39,12 +39,13 @@ export interface newsDataObject {
 }
 
 export interface stateObjectToProp {
-    fullData?: {
-        initialCoin: string, 
-        coinData: null | coinDataObject[],
-        news: null | newsDataObject[], 
-    },
+    fullData?: stateObject,
     fire_get_coin_data?: any,
     fire_get_news?: any,
+}
 
+export interface localStateApiComponent {
+    coinSelected: string,
+    showMobileMenu: boolean,
+    apiLoaded: boolean,
 }

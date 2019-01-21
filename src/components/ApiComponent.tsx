@@ -5,7 +5,7 @@ import logo from '../images/logo.svg';
 import '../css/App.css';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
-import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp } from '../types';
+import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp, localStateApiComponent } from '../types';
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
@@ -27,6 +27,15 @@ const get_news = (news: newsDataObject[]):actionObject => {
     }
 }
 
+
+//we define the mapStateToProps function where we will pass in to the connect method further down
+//We assign the entire state here to the fullData property 
+const mapStateToProps = (state:stateObject): stateObjectToProp => (
+    {
+        fullData: state,
+    }
+)
+    
 //we aren't using mapDispatchToProps as we don't need it in this basic example
 //const mapDispatchToProps = state => {
 //    return{}; 
@@ -34,38 +43,21 @@ const get_news = (news: newsDataObject[]):actionObject => {
 const mapDispatchToProps = (dispatch: any): any => (
     {
         fire_get_coin_data: (coinData: any) => dispatch(
-            get_coin_data(coinData)
+                get_coin_data(coinData)
         ), 
         fire_get_news: (newsData: any) => dispatch(
             get_news(newsData)
         ),
-    }
-
+    }    
 )
-
-//we define the mapStateToProps function where we will pass in to the connect method further down
-//We assign the entire state here to the fullData property 
-const mapStateToProps = (state:stateObject): stateObjectToProp => (
-    {
-        fullData: state,
-        // fire_get_coin_data:  get_coin_data,
-        // fire_get_news: get_news,
-    }
-)
-
-
-export interface localState {
-    coinSelected: string,
-    showMobileMenu: boolean,
-}
-
-
-class ApiComponent extends React.Component<stateObjectToProp, localState> {
+    
+class ApiComponent extends React.Component<stateObjectToProp, localStateApiComponent> {
     constructor(props: stateObjectToProp) {
         super(props);
         this.state = {
-            coinSelected: this.props.fullData.initialCoin,
+            coinSelected: 'BTC',
             showMobileMenu: false,
+            apiLoaded: false,
         }
     }
 
@@ -88,15 +80,15 @@ class ApiComponent extends React.Component<stateObjectToProp, localState> {
     }
 
     async fetchCoinData() {
-        const coin = this.state.coinSelected;
-        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${coin}&tsym=USD&limit=30&api_key={42fe264b1c5770a241062077c69f096b9548e03d7b37b634e9fc2c736d33ec98}`;
+        const site = `https://min-api.cryptocompare.com/data/histoday?fsym=${this.state.coinSelected}&tsym=USD&limit=30&api_key={42fe264b1c5770a241062077c69f096b9548e03d7b37b634e9fc2c736d33ec98}`;
         const response = await fetch(site);
         try {
             if (response.ok) {
                 const apiData = await response.json();
                 const { Data } = apiData;
-                this.props.fire_get_coin_data(Data);
-                await this.forceUpdate();
+                await this.props.fire_get_coin_data(Data);
+                await this.setState({ apiLoaded: true});
+                // await this.forceUpdate();
             }
         } catch (error) {
             alert('Error occured Coin Data API reload page');
@@ -159,11 +151,9 @@ class ApiComponent extends React.Component<stateObjectToProp, localState> {
             }
         </div>      
 
-        console.log(141,this.state, this.props);
+        console.log(161,this.state, this.props);
         return (
-            this.props.fullData.coinData !== null && this.props.fullData.coinData.length > 0 && 
-            this.props.fullData.news !== null && 
-            this.props.fullData.news.length > 0 
+            this.state.apiLoaded === true
             ?
             <div>
                 {navBar}
@@ -186,7 +176,7 @@ class ApiComponent extends React.Component<stateObjectToProp, localState> {
                     <TypeChooser >
                         {(type:any) => <CandleStickChart 
                         type={type} 
-                        data={this.props.fullData.coinData} 
+                        data={this.props.fullData!.coinData} 
                         />}
                     </TypeChooser>
                 </div>
