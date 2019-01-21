@@ -45,7 +45,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Project Overview
 
-CryptoLive is a easy way to watch the price action and news of the 7 most popular cryptos. It was built with a focus on using React, Redux, API's and CSS to achieve data visualization and presentation. It features responsive design to work on both mobile and desktop screen sizes. It is a single page app and a lot of focus has been put into building code with semantic clarity as well.
+CryptoLive is a easy way to watch the price action and news of the 7 most popular cryptos. It was built with a focus on using React, Redux, API's, Typescript and CSS to achieve data visualization and presentation. It features responsive design to work on both mobile and desktop screen sizes. It is a single page app and a lot of focus has been put into building code with semantic clarity as well. Typescript was also added to this project to improve maintainability.
 
 Idea's for later development: Use env file for additional privacy. You need to make the key name start with 'REACT_APP_' in the project root directory so REACT_APP_SECRET_KEY = 123456  
 console.log(process.env) to see your keys.
