@@ -1,18 +1,18 @@
 # Click here to see CryptoLive deployed [https://dan-kiss-dev-this.github.io/crypto-tracker/](https://dan-kiss-dev-this.github.io/crypto-tracker/)
 
-![Mobile-Page](/src/images/mobile.png?raw=true "mobile_landing_page")
+![Mobile-Page](/public/mobile.png?raw=true "mobile_landing_page")
 
 CryptoLive Mobile Landing - Note the ability to use a dropdown to pick different cryptos
 
-![Mobile-Page-menu](/src/images/mobileSecondary.png?raw=true "mobile_landing_page-menu")
+![Mobile-Page-menu](/public/mobileSecondary.png?raw=true "mobile_landing_page-menu")
 
 CryptoLive Mobile Landing - Note the menu
 
-![Mobile-Page](/src/images/desktop.png?raw=true "desktop_landing_page")
+![Mobile-Page](/public/desktop.png?raw=true "desktop_landing_page")
 
 CryptoLive Desktop Landing Page
 
-![Mobile-Page](/src/images/loadScreen.png?raw=true "loading_screen")
+![Mobile-Page](/public/loadScreen.png?raw=true "loading_screen")
 
 CryptoLive Loading Screen with Skeleton Loader
 
@@ -43,7 +43,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Project
+###Project Overview
+
 CryptoLive is a easy way to watch the price action and news of the 7 most popular cryptos. It was built with a focus on using React, Redux, API's and CSS to achieve data visualization and presentation. It features responsive design to work on both mobile and desktop screen sizes. It is a single page app and a lot of focus has been put into building code with semantic clarity as well.
 
 Idea's for later development: Use env file for additional privacy. You need to make the key name start with 'REACT_APP_' in the project root directory so REACT_APP_SECRET_KEY = 123456  
