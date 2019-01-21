@@ -43,7 +43,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-###Project Overview
+### Project Overview
 
 CryptoLive is a easy way to watch the price action and news of the 7 most popular cryptos. It was built with a focus on using React, Redux, API's and CSS to achieve data visualization and presentation. It features responsive design to work on both mobile and desktop screen sizes. It is a single page app and a lot of focus has been put into building code with semantic clarity as well.
 
