@@ -3,41 +3,7 @@ import ApiComponent from './ApiComponent';
 import { Provider } from 'react-redux';
 import {createStore, Store } from 'redux';
 import '../css/App.css';
-
-interface actionObject {
-  type: string,
-  value: any[],
-}
-
-interface stateObject {
-  initialCoin: string, 
-  coinData: null | coinDataObject[],
-  news: null | newsDataObject[], 
-}
-
-interface coinDataObject {
-  close: number,
-  high: number,
-  low: number,
-  open: number,
-  time: number,
-  volumefrom: number,
-  volumeto: number,
-}
-
-interface newsDataObject {
-  author: string,
-  content: string,
-  description: string,
-  publishedAt: string,
-  source: {
-    id: string,
-    name: string,
-  },
-  title: string,
-  url: string,
-  urlToImage: string,
-}
+import { actionObject, stateObject, coinDataObject, newsDataObject } from '../types';
 
 //We define the reducer here so that we can pass it in when we create the store
 const coinReducer = (state: stateObject = {
