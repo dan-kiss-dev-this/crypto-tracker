@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/crypto-tracker/static/js/runtime~main.8a9cc849.js"
   },
   {
-    "revision": "c6930ddfe2cadfb12e4b",
-    "url": "/crypto-tracker/static/js/main.c6930ddf.chunk.js"
+    "revision": "c771e9105e8926927d7e",
+    "url": "/crypto-tracker/static/js/main.c771e910.chunk.js"
   },
   {
     "revision": "f705867a4efe732c20df",
     "url": "/crypto-tracker/static/js/1.f705867a.chunk.js"
   },
   {
-    "revision": "c6930ddfe2cadfb12e4b",
+    "revision": "c771e9105e8926927d7e",
     "url": "/crypto-tracker/static/css/main.a52816c6.chunk.css"
   },
   {
-    "revision": "93093effe8bf28b742a5b6aff76da40b",
+    "revision": "fcf671a424ffdc5fd61a884f2c35e673",
     "url": "/crypto-tracker/index.html"
   }
 ];
