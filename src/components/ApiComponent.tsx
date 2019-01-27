@@ -158,7 +158,7 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
             <div>
                 {navBar}
                 <div className="Dropdown-main">
-                    <h4>Select Coin: 
+                    <h4 className="Dropdown-main__header">Select Coin: 
                         <select onChange={e => {
                             this.handleChange(e); 
                         }}>

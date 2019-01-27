@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ApiComponent from './ApiComponent';
 import { Provider } from 'react-redux';
 import {createStore, Store } from 'redux';
-import '../css/App.css';
+import '../css/App.scss';
 import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp } from '../types';
 
 //We define the reducer here so that we can pass it in when we create the store
