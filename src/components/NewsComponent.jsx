@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/App.scss';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { connect } from 'react-redux';
 

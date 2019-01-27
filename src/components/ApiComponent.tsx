@@ -2,7 +2,7 @@ import React from 'react';
 import CandleStickChart from './CandleStickChart';
 import { TypeChooser } from "react-stockcharts/lib/helper";
 import logo from '../images/logo.svg';
-import '../css/App.css';
+import '../css/App.scss';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
 import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp, localStateApiComponent } from '../types';
