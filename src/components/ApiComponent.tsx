@@ -10,17 +10,19 @@ import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectT
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
 //It's useful, but not necessary, to define your action types as variables and reference them when you define your actions
-const GET_COIN_DATA: string = "GET_COIN_DATA";
-const GET_NEWS: string = "GET_NEWS";
+const GET_COIN_DATA = "GET_COIN_DATA";
+const GET_NEWS = "GET_NEWS";
 
-const get_coin_data = (coinData: coinDataObject[]):actionObject => { 
+export type GetCoinDataAction = actionObject<typeof GET_COIN_DATA, coinDataObject[]>
+
+const get_coin_data = (coinData: coinDataObject[]):actionObject<typeof GET_COIN_DATA, coinDataObject[]> => { 
     return {
         type: GET_COIN_DATA,
         value: coinData
     };
 };
-
-const get_news = (news: newsDataObject[]):actionObject => {
+export type GetNewsAction = actionObject<typeof GET_NEWS,newsDataObject[]>
+const get_news = (news: newsDataObject[]):GetNewsAction => {
     return {
         type: GET_NEWS,
         value: news

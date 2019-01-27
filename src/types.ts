@@ -3,9 +3,9 @@
  * Shared types between components and blocks
  */
 
-export interface actionObject {
-    type: string,
-    value: any[],
+export interface actionObject<Ttype,Tvalue> {
+    type:  Ttype,
+    value: Tvalue,
 }
   
 export interface stateObject {
