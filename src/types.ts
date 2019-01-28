@@ -9,7 +9,6 @@ export interface actionObject {
 }
   
 export interface stateObject {
-    initialCoin: string, 
     coinData: null | coinDataObject[],
     news: null | newsDataObject[], 
 }

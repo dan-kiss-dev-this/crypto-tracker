@@ -7,7 +7,6 @@ import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectT
 
 //We define the reducer here so that we can pass it in when we create the store
 const coinReducer = (state: stateObject = {
-  initialCoin: 'BTC', 
   news: null, 
   coinData: null 
   }, action: actionObject): stateObject => {
