@@ -5,7 +5,7 @@ import logo from '../images/logo.svg';
 import '../css/App.scss';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
-import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp, localStateApiComponent } from '../types';
+import { stateObject, stateObjectToProp, localStateApiComponent } from '../types';
 import { get_coin_data, get_news } from '../actions/index';
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
@@ -17,21 +17,13 @@ const mapStateToProps = (state:stateObject): stateObjectToProp => (
         fullData: state,
     }
 )
-    
-//we aren't using mapDispatchToProps as we don't need it in this basic example
-//const mapDispatchToProps = state => {
-//    return{}; 
-//};
-const mapDispatchToProps = (dispatch: any): any => (
+
+const mapDispatchToProps = 
     {
-        fire_get_coin_data: (coinData: any) => dispatch(
-                get_coin_data(coinData)
-        ), 
-        fire_get_news: (newsData: any) => dispatch(
-            get_news(newsData)
-        ),
-    }    
-)
+        fire_get_coin_data: get_coin_data, 
+        fire_get_news: get_news,
+    };    
+
     
 class ApiComponent extends React.Component<stateObjectToProp, localStateApiComponent> {
     constructor(props: stateObjectToProp) {
