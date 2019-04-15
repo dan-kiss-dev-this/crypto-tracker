@@ -1,10 +1,14 @@
 import { actionObject, stateObject, coinDataObject, newsDataObject } from '../types';
 
+const defaultState: stateObject = {
+  news: [],
+  coinData: []
+};
+
 //We define the reducer here so that we can pass it in when we create the store
-export const coinReducer = (state: stateObject = {
-    news: null, 
-    coinData: null 
-    }, action: actionObject): stateObject => {
+export const coinReducer = (
+  state: stateObject = defaultState, 
+  action: actionObject): stateObject => {
       switch (action.type) {
         case "GET_COIN_DATA":
           let newCoinData: coinDataObject[] = action.value;
