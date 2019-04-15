@@ -6,27 +6,9 @@ import '../css/App.scss';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
 import { actionObject, stateObject, coinDataObject, newsDataObject, stateObjectToProp, localStateApiComponent } from '../types';
+import { get_coin_data, get_news } from '../actions/index';
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
-
-//It's useful, but not necessary, to define your action types as variables and reference them when you define your actions
-const GET_COIN_DATA: string = "GET_COIN_DATA";
-const GET_NEWS: string = "GET_NEWS";
-
-const get_coin_data = (coinData: coinDataObject[]):actionObject => { 
-    return {
-        type: GET_COIN_DATA,
-        value: coinData
-    };
-};
-
-const get_news = (news: newsDataObject[]):actionObject => {
-    return {
-        type: GET_NEWS,
-        value: news
-    }
-}
-
 
 //we define the mapStateToProps function where we will pass in to the connect method further down
 //We assign the entire state here to the fullData property 
