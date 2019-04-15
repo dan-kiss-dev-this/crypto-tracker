@@ -5,8 +5,9 @@ import logo from '../images/logo.svg';
 import '../css/App.scss';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
-import { stateObject, stateObjectToProp, localStateApiComponent } from '../types';
+import { stateObject, coinDataObject, newsDataObject, stateObjectToProp, localStateApiComponent } from '../types';
 import { get_coin_data, get_news } from '../actions/index';
+import { simCoinData, simNewsData } from '../backupData'; 
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
@@ -65,8 +66,10 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
                 // await this.forceUpdate();
             }
         } catch (error) {
-            alert('Error occured Coin Data API reload page');
+            alert('Simulated Coin Data Loaded');
             console.error(error);
+            await this.props.fire_get_coin_data(simCoinData);
+            await this.setState({ apiLoaded: true});
         }
     }
 
@@ -81,8 +84,9 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
                 this.props.fire_get_news(articles);
             }
         } catch (error) {
-            alert('Error occured News Data API reload page');
+            alert('Simulated News Data Loaded');
             console.error(error);
+            this.props.fire_get_news(simNewsData);
         }
     }
 
