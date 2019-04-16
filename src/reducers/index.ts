@@ -1,4 +1,6 @@
 import { actionObject, stateObject, coinDataObject, newsDataObject } from '../types';
+// import getNews2 from './getNews';
+import { combineReducers } from 'redux';
 
 const defaultState: stateObject = {
   news: [],
@@ -23,3 +25,10 @@ export const coinReducer = (
           return state;
     }
   }
+
+const rootReducer = combineReducers({
+  coinReducer,
+  // getNews2
+});
+
+export default rootReducer;

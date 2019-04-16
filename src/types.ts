@@ -9,8 +9,8 @@ export interface actionObject {
 }
   
 export interface stateObject {
-    coinData: null | coinDataObject[],
-    news: null | newsDataObject[], 
+    coinData: [] | coinDataObject[],
+    news: [] | newsDataObject[], 
 }
 
 export interface coinDataObject {

@@ -7,7 +7,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewsComponent from './NewsComponent';
 import { stateObject, coinDataObject, newsDataObject, stateObjectToProp, localStateApiComponent } from '../types';
 import { get_coin_data, get_news } from '../actions/index';
-import { simCoinData, simNewsData } from '../backupData'; 
+import { simCoinData } from '../backupData'; 
 
 import { connect } from 'react-redux'; //we import the connect method from react-redux
 
@@ -50,7 +50,7 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
     }
 
     async componentDidMount() {
-        await this.fetchNews();
+        // await this.fetchNews();
         await this.fetchCoinData();
     }
 
@@ -73,22 +73,22 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
         }
     }
 
-    async fetchNews() {
-        const site = 'https://newsapi.org/v2/everything?sources=crypto-coins-news&apiKey=be6a84f3238641c2b3eb13361beffc88';
-        const response = await fetch(site)
-        try {
-            if (response.ok) {
-                const newsData = await response.json();
-                const { articles } = newsData;
-                // await this.props.dispatch(get_news(articles));
-                this.props.fire_get_news(articles);
-            }
-        } catch (error) {
-            alert('Simulated News Data Loaded');
-            console.error(error);
-            this.props.fire_get_news(simNewsData);
-        }
-    }
+    // async fetchNews() {
+    //     const site = 'https://newsapi.org/v2/everything?sources=crypto-coins-news&apiKey=be6a84f3238641c2b3eb13361beffc88';
+    //     const response = await fetch(site)
+    //     try {
+    //         if (response.ok) {
+    //             const newsData = await response.json();
+    //             const { articles } = newsData;
+    //             // await this.props.dispatch(get_news(articles));
+    //             this.props.fire_get_news(articles);
+    //         }
+    //     } catch (error) {
+    //         alert('Simulated News Data Loaded');
+    //         console.error(error);
+    //         this.props.fire_get_news(simNewsData);
+    //     }
+    // }
 
     render() {
         const navBar =  <div>
@@ -131,8 +131,8 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
 
         console.log(161,this.state, this.props);
         return (
-            this.state.apiLoaded === true
-            ?
+            // this.state.apiLoaded === true
+            // ?
             <div>
                 {navBar}
                 <div className="Dropdown-main">
@@ -150,32 +150,32 @@ class ApiComponent extends React.Component<stateObjectToProp, localStateApiCompo
                         </select>
                     </h4>
                 </div>
-                <div className="Chart-main">
+                {/* <div className="Chart-main">
                     <TypeChooser >
                         {(type:any) => <CandleStickChart 
                         type={type} 
                         data={this.props.fullData!.coinData} 
                         />}
                     </TypeChooser>
-                </div>
+                </div> */}
                 <NewsComponent /> 
             </div>
-            :
-            <div className="App">
-                <SkeletonTheme color='gray' highlightColor='white'>
-                    <h1><Skeleton count={1} height={70}/></h1>
-                </SkeletonTheme>
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <a  className="App-link"
-                        href="https://github.com/dan-kiss-dev-this/crypto-tracker"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        APIs Loading...
-                    </a>
-                </div>
-            </div>
+            // :
+            // <div className="App">
+            //     <SkeletonTheme color='gray' highlightColor='white'>
+            //         <h1><Skeleton count={1} height={70}/></h1>
+            //     </SkeletonTheme>
+            //     <div className="App-header">
+            //         <img src={logo} className="App-logo" alt="logo" />
+            //         <a  className="App-link"
+            //             href="https://github.com/dan-kiss-dev-this/crypto-tracker"
+            //             target="_blank"
+            //             rel="noopener noreferrer"
+            //         >
+            //             APIs Loading...
+            //         </a>
+            //     </div>
+            // </div>
         );
     }
 }

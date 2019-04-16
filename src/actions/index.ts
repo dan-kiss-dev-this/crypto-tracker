@@ -17,3 +17,18 @@ export const get_news = (news: newsDataObject[]):actionObject => {
         value: news
     }
 }
+
+export const get_news2 = () => {
+    return (dispatch: any) => {
+        const site = 'https://newsapi.org/v2/everything?sources=crypto-coins-news&apiKey=be6a84f3238641c2b3eb13361beffc88';
+        fetch(site)
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: GET_NEWS,
+                payload: data
+            })
+        });
+
+    }
+}
